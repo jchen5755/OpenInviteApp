@@ -12,12 +12,12 @@
         "source": "C:\\Users\\Jerry\\StudioProjects\\OpenInviteAppTest\\app\\src\\main\\res\\drawable\\ic_invitelogo.xml"
     },
     {
-        "merged": "C:\\Users\\Jerry\\StudioProjects\\OpenInviteAppTest\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Jerry\\StudioProjects\\OpenInviteAppTest\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
-    },
-    {
         "merged": "C:\\Users\\Jerry\\StudioProjects\\OpenInviteAppTest\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Jerry\\StudioProjects\\OpenInviteAppTest\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Jerry\\StudioProjects\\OpenInviteAppTest\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Jerry\\StudioProjects\\OpenInviteAppTest\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\Jerry\\StudioProjects\\OpenInviteAppTest\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",

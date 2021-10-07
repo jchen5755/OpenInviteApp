@@ -4,10 +4,9 @@ com/example/openinvitetest/Choose_Login_And_Reg.java
  com.example.openinvitetest.Choose_Login_And_Reg
  com.example.openinvitetest.Choose_Login_And_Reg$1
  com.example.openinvitetest.Choose_Login_And_Reg$2
-com/example/openinvitetest/MainActivity.java
- com.example.openinvitetest.MainActivity
- com.example.openinvitetest.MainActivity$1
-com/example/openinvitetest/RegisterActivity.java
- com.example.openinvitetest.RegisterActivity
 com/example/openinvitetest/LoginActivity.java
  com.example.openinvitetest.LoginActivity
+com/example/openinvitetest/RegisterActivity.java
+ com.example.openinvitetest.RegisterActivity
+com/example/openinvitetest/MainActivity.java
+ com.example.openinvitetest.MainActivity
