@@ -15,3 +15,8 @@ buildscript {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    // Timber version
+    timber_version = '5.0.1'
+}

@@ -14,7 +14,7 @@ public class Choose_Login_And_Reg extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choose_login_and_reg);
+        setContentView(R.layout.fragment_choose_login_and_reg);
 
         mLogin = (Button) findViewById(R.id.login);
         mRegister = (Button) findViewById(R.id.register);

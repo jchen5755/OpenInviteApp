@@ -1,4 +1,4 @@
-#Wed Oct 06 23:49:31 EDT 2021
+#Thu Oct 07 15:09:26 EDT 2021
 base.2=C\:\\Users\\Jerry\\StudioProjects\\OpenInviteAppTest\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
 path.2=10/classes.dex
 base.1=C\:\\Users\\Jerry\\StudioProjects\\OpenInviteAppTest\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

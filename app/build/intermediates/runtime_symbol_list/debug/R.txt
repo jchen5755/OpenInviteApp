@@ -1964,6 +1964,7 @@ int id fixed 0x7f0800b7
 int id flip 0x7f0800b8
 int id floating 0x7f0800b9
 int id forever 0x7f0800ba
+int id fragment_container 0x7f0801db
 int id fragment_container_view_tag 0x7f0800bb
 int id frost 0x7f0800bc
 int id ghost_view 0x7f0800bd
@@ -1987,7 +1988,6 @@ int id ifRoom 0x7f0800ce
 int id ignore 0x7f0800cf
 int id ignoreRequest 0x7f0800d0
 int id image 0x7f0800d1
-int id image_splash_screen 0x7f0801d0
 int id immediateStop 0x7f0800d2
 int id included 0x7f0800d3
 int id info 0x7f0800d4
@@ -2309,7 +2309,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0b0018
 int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
-int layout activity_choose_login_and_reg 0x7f0b006f
+int layout activity_fragment 0x7f0b0072
 int layout activity_login 0x7f0b0070
 int layout activity_main 0x7f0b001c
 int layout activity_register 0x7f0b0071
@@ -2329,6 +2329,7 @@ int layout design_navigation_menu 0x7f0b0029
 int layout design_navigation_menu_item 0x7f0b002a
 int layout design_text_input_end_icon 0x7f0b002b
 int layout design_text_input_start_icon 0x7f0b002c
+int layout fragment_choose_login_and_reg 0x7f0b0073
 int layout material_chip_input_combo 0x7f0b002d
 int layout material_clock_display 0x7f0b002e
 int layout material_clock_display_divider 0x7f0b002f
