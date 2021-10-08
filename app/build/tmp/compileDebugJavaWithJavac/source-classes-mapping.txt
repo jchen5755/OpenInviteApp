@@ -6,13 +6,13 @@ com/example/openinvitetest/Choose_Login_And_Reg.java
  com.example.openinvitetest.Choose_Login_And_Reg$2
 com/example/openinvitetest/MainActivity.java
  com.example.openinvitetest.MainActivity
-com/example/openinvitetest/MainFragment.java
- com.example.openinvitetest.MainFragment
+com/example/openinvitetest/LoginActivity.java
+ com.example.openinvitetest.LoginActivity
 com/example/openinvitetest/RegisterActivity.java
  com.example.openinvitetest.RegisterActivity
 com/example/openinvitetest/SingleFragmentActivity.java
  com.example.openinvitetest.SingleFragmentActivity
+com/example/openinvitetest/MainFragment.java
+ com.example.openinvitetest.MainFragment
 com/example/openinvitetest/LoginFragment.java
  com.example.openinvitetest.LoginFragment
-com/example/openinvitetest/LoginActivity.java
- com.example.openinvitetest.LoginActivity

@@ -1,6 +1,7 @@
 package com.example.openinvitetest;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import java.util.zip.Inflater;
 
 public class LoginFragment extends Fragment implements View.OnClickListener {
+    private final String TAG = getClass().getSimpleName();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         if (loginBtn != null) {
             loginBtn.setOnClickListener(this);
         }
+        Log.d(TAG, "On Create View portion of Fragment Lifecycle");
         return v;
     }
 
