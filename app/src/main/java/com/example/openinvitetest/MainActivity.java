@@ -27,5 +27,24 @@ public class MainActivity extends SingleFragmentActivity {
 //        startActivity(i);
 //        finish();
         Timber.tag(TAG).e("On Create");
+        Log.d(TAG, "On Create portion of activity lifecycle");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "On Pause portion of activity lifecycle");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "On Destroy portion of activity lifecycle");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "On Resume portion of activity lifecycle");
     }
 }

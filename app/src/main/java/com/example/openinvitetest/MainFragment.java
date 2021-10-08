@@ -11,6 +11,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 public class MainFragment extends Fragment implements View.OnClickListener{
     private Button mLogin, mRegister;
@@ -33,9 +34,14 @@ public class MainFragment extends Fragment implements View.OnClickListener{
     public void onClick(View view) {
         final Activity activity = requireActivity();
         final int viewId = view.getId();
+        FragmentManager fm = getParentFragmentManager();
+        Fragment fragment = new LoginFragment();
 
         if (viewId == R.id.login) {
-            startActivity(new Intent(activity, LoginActivity.class));
+            fm.beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .addToBackStack("login_fragment")
+                    .commit();
         } else if (viewId == R.id.register) {
             startActivity(new Intent(activity, RegisterActivity.class));
         }

@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/layout/activity_fragment.xml" value="0.490036231884058" />
+        <entry key="..\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/layout/activity_login.xml" value="0.490036231884058" />
+        <entry key="..\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/layout/fragment_choose_login_and_reg.xml" value="0.490036231884058" />
         <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/drawable/ic_invitelogo.xml" value="0.4203125" />
         <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/activity_choose_login_and_reg.xml" value="0.4" />
         <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/activity_fragment.xml" value="0.19832826747720364" />

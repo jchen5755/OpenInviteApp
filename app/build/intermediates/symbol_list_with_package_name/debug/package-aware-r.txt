@@ -2011,6 +2011,7 @@ id linear
 id listMode
 id list_item
 id login
+id login_btn
 id logo
 id masked
 id match_constraint
@@ -2311,7 +2312,6 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_fragment
-layout activity_login
 layout activity_main
 layout activity_register
 layout custom_dialog
@@ -2331,6 +2331,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_choose_login_and_reg
+layout fragment_login
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
