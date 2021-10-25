@@ -30,7 +30,7 @@ public class Choose_Login_And_Reg extends AppCompatActivity {
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Choose_Login_And_Reg.this, RegisterActivity.class);
+                Intent i = new Intent(Choose_Login_And_Reg.this, RegisterFragment.class);
                 startActivity(i);
             }
         });

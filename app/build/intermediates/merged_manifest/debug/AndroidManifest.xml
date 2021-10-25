@@ -25,7 +25,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.OpenInviteTest" >
         <activity
-            android:name="com.example.openinvitetest.RegisterActivity"
+            android:name="com.example.openinvitetest.RegisterFragment"
             android:exported="true" />
         <activity
             android:name="com.example.openinvitetest.LoginActivity"

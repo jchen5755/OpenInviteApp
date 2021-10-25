@@ -3,6 +3,7 @@ package com.example.openinvitetest;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,15 +36,18 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         final Activity activity = requireActivity();
         final int viewId = view.getId();
         FragmentManager fm = getParentFragmentManager();
-        Fragment fragment = new LoginFragment();
 
         if (viewId == R.id.login) {
             fm.beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
+                    .replace(R.id.fragment_container, new LoginFragment())
                     .addToBackStack("login_fragment")
                     .commit();
         } else if (viewId == R.id.register) {
-            startActivity(new Intent(activity, RegisterActivity.class));
+            fm.beginTransaction()
+                    .replace(R.id.fragment_container, new RegisterFragment())
+                    .addToBackStack("register_fragment")
+                    .commit();
+            Log.d("ree", "register button clicked in main fragment");
         }
     }
 }

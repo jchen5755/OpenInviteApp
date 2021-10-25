@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OpenInviteTest">
         <activity
-            android:name=".RegisterActivity"
+            android:name=".RegisterFragment"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"

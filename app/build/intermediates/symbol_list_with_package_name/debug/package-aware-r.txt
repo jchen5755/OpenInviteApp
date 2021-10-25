@@ -2372,7 +2372,6 @@ layout abc_tooltip
 layout activity_fragment
 layout activity_main
 layout activity_profile
-layout activity_register
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout custom_dialog
@@ -2393,6 +2392,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_choose_login_and_reg
 layout fragment_login
+layout fragment_register
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
