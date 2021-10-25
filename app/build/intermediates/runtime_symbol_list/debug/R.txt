@@ -1967,6 +1967,7 @@ int id decelerate 0x7f080091
 int id decelerateAndComplete 0x7f080092
 int id decor_content_parent 0x7f080093
 int id default_activity_button 0x7f080094
+int id deleteAccountBtn 0x7f0801ee
 int id deltaRelative 0x7f080095
 int id dependency_ordering 0x7f080096
 int id design_bottom_sheet 0x7f080097
@@ -2159,6 +2160,9 @@ int id phone_number 0x7f080151
 int id pin 0x7f080152
 int id position 0x7f080153
 int id postLayout 0x7f080154
+int id profile_email 0x7f0801ea
+int id profile_first_name 0x7f0801eb
+int id profile_last_name 0x7f0801ec
 int id progress_circular 0x7f080155
 int id progress_horizontal 0x7f080156
 int id radio 0x7f080157
@@ -2288,6 +2292,7 @@ int id unchecked 0x7f0801d2
 int id uniform 0x7f0801d3
 int id unlabeled 0x7f0801d4
 int id up 0x7f0801d5
+int id updateEmailBtn 0x7f0801ed
 int id useLogo 0x7f0801d6
 int id vertical_only 0x7f0801d7
 int id view_offset_helper 0x7f0801d8
@@ -2370,7 +2375,6 @@ int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_fragment 0x7f0b001c
 int layout activity_main 0x7f0b001d
-int layout activity_profile 0x7f0b001e
 int layout browser_actions_context_menu_page 0x7f0b001f
 int layout browser_actions_context_menu_row 0x7f0b0020
 int layout custom_dialog 0x7f0b0021
@@ -2391,6 +2395,7 @@ int layout design_text_input_end_icon 0x7f0b002f
 int layout design_text_input_start_icon 0x7f0b0030
 int layout fragment_choose_login_and_reg 0x7f0b0031
 int layout fragment_login 0x7f0b0032
+int layout fragment_profile 0x7f0b0076
 int layout fragment_register 0x7f0b0033
 int layout material_chip_input_combo 0x7f0b0034
 int layout material_clock_display 0x7f0b0035

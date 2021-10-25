@@ -51,7 +51,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_register, container, false);
-//        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         mRegister = (Button) v.findViewById(R.id.register);
         mEmail = (EditText) v.findViewById(R.id.email);
         mPassword = (EditText) v.findViewById(R.id.password);
@@ -66,104 +66,22 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         if (mExisting != null) {
             mExisting.setOnClickListener(this);
         }
-//        firebaseAuthStateListener = new FirebaseAuth.AuthStateListener() {
-//            @Override
-//            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-//                final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        firebaseAuthStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 //                if (user !=  null && user.isEmailVerified()) {
 //                    Intent i = new Intent(RegisterFragment.this, ProfileActivity.class);
 //                    startActivity(i);
 //                    finish();
 //                    return;
 //                }
-//            }
-//        };
+            }
+        };
         Log.d(TAG, "On Create View for REGISTER");
         return v;
     }
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//
-//        mAuth = FirebaseAuth.getInstance();
-////        firebaseAuthStateListener = new FirebaseAuth.AuthStateListener() {
-////            @Override
-////            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-////                final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-////                if (user !=  null && user.isEmailVerified()) {
-////                    Intent i = new Intent(RegisterFragment.this, ProfileActivity.class);
-////                    startActivity(i);
-////                    finish();
-////                    return;
-////                }
-////            }
-////        };
-////        existing.setOnClickListener(new View.OnClickListener() {
-////            @Override
-////            public void onClick(View view) {
-////                Intent i = new Intent(RegisterFragment.this, LoginActivity.class);
-////                startActivity(i);
-////                finish();
-////                return;
-////            }
-////        });
-////        mRegister = (Button) findViewById(R.id.register);
-////        mEmail = (EditText) findViewById(R.id.email);
-////        mPassword = (EditText) findViewById(R.id.password);
-////        mPasswordCheck = (EditText) findViewById(R.id.confirm_password);
-////        mFirstName = (EditText) findViewById(R.id.first_name);
-////        mLastName = (EditText) findViewById(R.id.last_name);
-//        mRegister.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                final String email = mEmail.getText().toString();
-//                final String password = mPassword.getText().toString();
-//                final String passwordCheck = mPasswordCheck.getText().toString();
-//                final String firstName = mFirstName.getText().toString();
-//                final String lastName = mLastName.getText().toString();
-//
-//                if (checkInputs(email, password, passwordCheck, firstName, lastName)) {
-//                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(RegisterFragment.this, new OnCompleteListener<AuthResult>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<AuthResult> task) {
-//                            if (!task.isSuccessful()) {
-//                                Toast.makeText(RegisterFragment.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-//                            } else {
-//                                mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                    @Override
-//                                    public void onComplete(@NonNull Task<Void> task) {
-//                                        if (task.isSuccessful()) {
-//                                            Toast.makeText(RegisterFragment.this, "Registered successfully." + " Please check your email for verification", Toast.LENGTH_SHORT).show();
-//                                            String userId = mAuth.getCurrentUser().getUid();
-//                                            DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Users").child((userId));
-//                                            Map userInfo = new HashMap<>();
-//                                            userInfo.put("name", firstName + " " + lastName);
-//                                            userInfo.put("profileImageUrl", "default");
-//                                            currentUserDb.updateChildren(userInfo);
-//
-//                                            mEmail.setText("");
-//                                            mFirstName.setText("");
-//                                            mFirstName.setText("");
-//                                            mPassword.setText("");
-//                                            mPasswordCheck.setText("");
-//                                            Intent i = new Intent(RegisterFragment.this, MainActivity.class);
-//                                            startActivity(i);
-//                                            finish();
-//                                            return;
-//                                        } else {
-//                                            Toast.makeText(RegisterFragment.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-//                                        }
-//                                    }
-//                                });
-//                            }
-//                        }
-//                    });
-//                }
-//            }
-//        });
-//    }
 
     private boolean checkInputs(String email, String password, String passwordCheck, String firstName, String lastName) {
         if (email.equals("") || password.equals("") || passwordCheck.equals("") || firstName.equals("") || lastName.equals("")) {
@@ -184,13 +102,13 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onStart() {
         super.onStart();
-//        mAuth.addAuthStateListener(firebaseAuthStateListener);
+        mAuth.addAuthStateListener(firebaseAuthStateListener);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-//        mAuth.removeAuthStateListener(firebaseAuthStateListener);
+        mAuth.removeAuthStateListener(firebaseAuthStateListener);
     }
 
     @Override
@@ -204,46 +122,46 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
             final String firstName = mFirstName.getText().toString();
             final String lastName = mLastName.getText().toString();
 
-//            if (checkInputs(email, password, passwordCheck, firstName, lastName)) {
-//                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (!task.isSuccessful()) {
-//                            Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-//                        } else {
-//                            mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                @Override
-//                                public void onComplete(@NonNull Task<Void> task) {
-//                                    if (task.isSuccessful()) {
-//                                        Toast.makeText(getContext(), "Registered successfully." + " Please check your email for verification", Toast.LENGTH_SHORT).show();
-//                                        String userId = mAuth.getCurrentUser().getUid();
-//                                        DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Users").child((userId));
-//                                        Map userInfo = new HashMap<>();
-//                                        userInfo.put("name", firstName + " " + lastName);
-//                                        userInfo.put("profileImageUrl", "default");
-//                                        currentUserDb.updateChildren(userInfo);
-//
-//                                        mEmail.setText("");
-//                                        mFirstName.setText("");
-//                                        mFirstName.setText("");
-//                                        mPassword.setText("");
-//                                        mPasswordCheck.setText("");
-//                                        return;
-//                                    } else {
-//                                        Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-//                                    }
-//                                }
-//                            });
-//                        }
-//                    }
-//                });
-//            }
+            if (checkInputs(email, password, passwordCheck, firstName, lastName)) {
+                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (!task.isSuccessful()) {
+                            Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        } else {
+                            mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(getContext(), "Registered successfully." + " Please check your email for verification", Toast.LENGTH_SHORT).show();
+                                        String userId = mAuth.getCurrentUser().getUid();
+                                        DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Users").child((userId));
+                                        Map userInfo = new HashMap<>();
+                                        userInfo.put("firstName", firstName);
+                                        userInfo.put("lastName", lastName);
+                                        userInfo.put("profileImageUrl", "default");
+                                        currentUserDb.updateChildren(userInfo);
+
+                                        mEmail.setText("");
+                                        mFirstName.setText("");
+                                        mFirstName.setText("");
+                                        mPassword.setText("");
+                                        mPasswordCheck.setText("");
+                                        return;
+                                    } else {
+                                        Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+                        }
+                    }
+                });
+            }
 
 
 
             fm.beginTransaction()
-                    .replace(R.id.fragment_container, new ProfileFragment())
-                    .addToBackStack("profile_fragment")
+                    .replace(R.id.fragment_container, new LoginFragment())
                     .commit();
         } else if (viewId == mExisting.getId()) {
             fm.beginTransaction()

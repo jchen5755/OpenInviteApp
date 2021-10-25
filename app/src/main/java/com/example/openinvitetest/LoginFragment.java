@@ -58,12 +58,11 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                if (user != null && user.isEmailVerified() && !loginButtonClicked) {
-                    fm.beginTransaction()
-                            .replace(R.id.fragment_container, new ProfileFragment())
-                            .addToBackStack("profile_fragment")
-                            .commit();
-                }
+//                if (user != null && user.isEmailVerified() && !loginButtonClicked) {
+//                    fm.beginTransaction()
+//                            .replace(R.id.fragment_container, new ProfileFragment())
+//                            .commit();
+//                }
             }
         };
         Log.d(TAG, "On Create View portion of Fragment Lifecycle");
@@ -91,7 +90,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                             if (mAuth.getCurrentUser().isEmailVerified()) {
                                 fm.beginTransaction()
                                         .replace(R.id.fragment_container, new ProfileFragment())
-                                        .addToBackStack("profile_fragment")
                                         .commit();
                                 return;
                             } else {

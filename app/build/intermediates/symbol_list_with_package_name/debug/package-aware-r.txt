@@ -1968,6 +1968,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id deleteAccountBtn
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -2160,6 +2161,9 @@ id phone_number
 id pin
 id position
 id postLayout
+id profile_email
+id profile_first_name
+id profile_last_name
 id progress_circular
 id progress_horizontal
 id radio
@@ -2289,6 +2293,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id updateEmailBtn
 id useLogo
 id vertical_only
 id view_offset_helper
@@ -2371,7 +2376,6 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_fragment
 layout activity_main
-layout activity_profile
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
 layout custom_dialog
@@ -2392,6 +2396,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_choose_login_and_reg
 layout fragment_login
+layout fragment_profile
 layout fragment_register
 layout material_chip_input_combo
 layout material_clock_display
