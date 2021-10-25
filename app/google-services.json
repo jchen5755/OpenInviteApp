@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "294315320342",
+    "firebase_url": "https://openinviteapp-cfc23-default-rtdb.firebaseio.com",
+    "project_id": "openinviteapp-cfc23",
+    "storage_bucket": "openinviteapp-cfc23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294315320342:android:9e8f735fd1166b33754137",
+        "android_client_info": {
+          "package_name": "com.example.openinvitetest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294315320342-g46jccg9orns4l27ml66jj6dm8lnrmf8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClAqcnkH93_OtmVqkv7n2aCUzOtdCDho4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294315320342-g46jccg9orns4l27ml66jj6dm8lnrmf8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294315320342:android:a74ea725339832b9754137",
+        "android_client_info": {
+          "package_name": "com.openinvite.openinvite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294315320342-g46jccg9orns4l27ml66jj6dm8lnrmf8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClAqcnkH93_OtmVqkv7n2aCUzOtdCDho4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294315320342-g46jccg9orns4l27ml66jj6dm8lnrmf8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

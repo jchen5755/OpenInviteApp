@@ -11,7 +11,10 @@
         <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/activity_fragment.xml" value="0.19832826747720364" />
         <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/activity_login.xml" value="0.4041666666666667" />
         <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/activity_profile.xml" value="0.33489583333333334" />
         <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/fragment_choose_login_and_reg.xml" value="0.246875" />
+        <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/fragment_login.xml" value="0.33489583333333334" />
       </map>
     </option>
   </component>
