@@ -57,12 +57,6 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         firebaseAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//                if (user != null && user.isEmailVerified() && !loginButtonClicked) {
-//                    fm.beginTransaction()
-//                            .replace(R.id.fragment_container, new ProfileFragment())
-//                            .commit();
-//                }
             }
         };
         Log.d(TAG, "On Create View portion of Fragment Lifecycle");
@@ -87,14 +81,10 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                         if (!task.isSuccessful()) {
                             Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         } else {
-                            if (mAuth.getCurrentUser().isEmailVerified()) {
-                                fm.beginTransaction()
-                                        .replace(R.id.fragment_container, new ProfileFragment())
-                                        .commit();
-                                return;
-                            } else {
-                                Toast.makeText(getContext(), "Please verify your email", Toast.LENGTH_SHORT).show();
-                            }
+                            fm.beginTransaction()
+                                    .replace(R.id.fragment_container, new ProfileFragment())
+                                    .commit();
+                            return;
                         }
                     }
                 });

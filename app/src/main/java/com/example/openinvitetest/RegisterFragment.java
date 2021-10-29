@@ -52,12 +52,12 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_register, container, false);
         mAuth = FirebaseAuth.getInstance();
-        mRegister = (Button) v.findViewById(R.id.register);
-        mEmail = (EditText) v.findViewById(R.id.email);
-        mPassword = (EditText) v.findViewById(R.id.password);
-        mPasswordCheck = (EditText) v.findViewById(R.id.confirm_password);
-        mFirstName = (EditText) v.findViewById(R.id.first_name);
-        mLastName = (EditText) v.findViewById(R.id.last_name);
+        mRegister = v.findViewById(R.id.register);
+        mEmail = v.findViewById(R.id.email);
+        mPassword = v.findViewById(R.id.password);
+        mPasswordCheck = v.findViewById(R.id.confirm_password);
+        mFirstName = v.findViewById(R.id.first_name);
+        mLastName = v.findViewById(R.id.last_name);
         mExisting = v.findViewById(R.id.existing);
         fm = getParentFragmentManager();
         if (mRegister != null) {
@@ -126,40 +126,31 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                 mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (!task.isSuccessful()) {
-                            Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        } else {
-                            mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(getContext(), "Registered successfully." + " Please check your email for verification", Toast.LENGTH_SHORT).show();
-                                        String userId = mAuth.getCurrentUser().getUid();
-                                        DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Users").child((userId));
-                                        Map userInfo = new HashMap<>();
-                                        userInfo.put("firstName", firstName);
-                                        userInfo.put("lastName", lastName);
-                                        userInfo.put("profileImageUrl", "default");
-                                        currentUserDb.updateChildren(userInfo);
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "createUserWithEmail:success");
+                            Toast.makeText(getContext(), "Registered successfully." + " Please check your email for verification", Toast.LENGTH_SHORT).show();
+                            String userId = mAuth.getCurrentUser().getUid();
+                            DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Users").child((userId));
+                            Map userInfo = new HashMap<>();
+                            userInfo.put("firstName", firstName);
+                            userInfo.put("lastName", lastName);
+                            userInfo.put("profileImageUrl", "default");
+                            currentUserDb.updateChildren(userInfo);
 
-                                        mEmail.setText("");
-                                        mFirstName.setText("");
-                                        mFirstName.setText("");
-                                        mPassword.setText("");
-                                        mPasswordCheck.setText("");
-                                        return;
-                                    } else {
-                                        Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
+                            mEmail.setText("");
+                            mFirstName.setText("");
+                            mFirstName.setText("");
+                            mPassword.setText("");
+                            mPasswordCheck.setText("");
+                            return;
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
                         }
                     }
                 });
             }
-
-
-
             fm.beginTransaction()
                     .replace(R.id.fragment_container, new LoginFragment())
                     .commit();

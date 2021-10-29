@@ -1,9 +1,9 @@
-#Mon Oct 25 01:59:23 EDT 2021
-base.2=E\:\\Documents\\College\\2021SeniorYear\\Autumn\\CSE5236\\OpenInviteApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
+#Tue Oct 26 15:05:40 EDT 2021
+base.2=C\:\\Users\\Jerry\\StudioProjects\\OpenInviteAppTest\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
 path.2=10/classes.dex
-base.1=E\:\\Documents\\College\\2021SeniorYear\\Autumn\\CSE5236\\OpenInviteApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.1=C\:\\Users\\Jerry\\StudioProjects\\OpenInviteAppTest\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 path.1=0/classes.dex
-base.0=E\:\\Documents\\College\\2021SeniorYear\\Autumn\\CSE5236\\OpenInviteApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.0=C\:\\Users\\Jerry\\StudioProjects\\OpenInviteAppTest\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
