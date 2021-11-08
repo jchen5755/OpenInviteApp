@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">OpenInviteTest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoiZWtsZWUyMDAwIiwiYSI6ImNrdDNzZ20xaTBib3gydnBvMGQ0bTQ0cXEifQ.8BgkHvDk9FCAKk9fYcQLOQ</string>
 </resources>

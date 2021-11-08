@@ -82,7 +82,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                             Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         } else {
                             fm.beginTransaction()
-                                    .replace(R.id.fragment_container, new ProfileFragment())
+                                    .replace(R.id.fragment_container, new mainMapFragment())
                                     .commit();
                             return;
                         }
