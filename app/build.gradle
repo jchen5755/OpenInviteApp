@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.openinvitetest"
-        minSdk 30
+        minSdkVersion 21
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -21,9 +21,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField 'String', "MapboxAccessToken", '"sk.eyJ1IjoiZWtsZWUyMDAwIiwiYSI6ImNrdnI5NXVlODFtZzUydW1vZGJ5Njg5bWUifQ.KBiSm4-OF5rSMdDG5wxWwA"'
+        }
         release {
-            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', "MapboxAccessToken", '"sk.eyJ1IjoiZWtsZWUyMDAwIiwiYSI6ImNrdnI5NXVlODFtZzUydW1vZGJ5Njg5bWUifQ.KBiSm4-OF5rSMdDG5wxWwA"'
+            minifyEnabled false
         }
     }
     compileOptions {
@@ -46,6 +50,17 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation "com.jakewharton.timber:timber:$rootProject.timber_version"
 
+    // Mapbox
+//    implementation 'com.mapbox.maps:android:10.1.0'
+    implementation "com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1"
+//    implementation "com.mapbox.mapboxsdk:mapbox-android-core:4.0.0"
+//    implementation "com.mapbox.mapboxsdk:mapbox-java-geojson:2.2.10"
+//    implementation "com.mapbox.mapboxsdk:mapbox-android-services:2.2.10"
+    implementation "com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0"
+//    implementation "com.mapbox.mapboxsdk:mapbox-android-ui:2.2.10"
+//    implementation ('com.mapbox.maps:android:10.1.0'){
+//        exclude group: 'group_name', module: 'module_name'
+//    }
 
     //Added
     //implementation 'com.onesignal:OneSignal:3.10.1'

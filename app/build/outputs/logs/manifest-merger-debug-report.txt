@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-35:12
+ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-36:12
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\e8b294cb4529770c2bdab494b89bedd5\transformed\material-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\3721de789aff74f2f52f02659b18895c\transformed\constraintlayout-2.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.3.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\ccd6c517801f56e7200472775579e27c\transformed\appcompat-1.3.1\AndroidManifest.xml:17:1-24:12
@@ -12,6 +12,8 @@ MERGED from [com.google.firebase:firebase-database:20.0.2] C:\Users\Ethan Lee\.g
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\7bc9124ddd25bef25a020b51d9d428ba\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-maps:18.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\7d6600a9635903e1164fa0008ca3b8b1\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:17:1-44:12
 MERGED from [com.jakewharton.timber:timber:5.0.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\11c96b1550b2d12d8db36e0b862c505b\transformed\jetified-timber-5.0.1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\608ea0b35f8f2438976bcac59a781929\transformed\jetified-mapbox-android-sdk-9.2.1\AndroidManifest.xml:2:1-21:12
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:2:1-35:12
 MERGED from [com.google.firebase:firebase-analytics:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\a3745b3e5224e65eb98eed5e41031e1b\transformed\jetified-firebase-analytics-19.0.2\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\cc0c490645cb5c8ef7069804dff9c2ae\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] C:\Users\Ethan Lee\.gradle\caches\transforms-3\473b3bc2d803ac7436c939abbc1a6e43\transformed\jetified-firebase-appcheck-interop-16.0.0-beta02\AndroidManifest.xml:15:1-26:12
@@ -47,6 +49,7 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Eth
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\fb357798e0a06fc931bb8f4dac764065\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.media:media:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\bc549059837f713a6813ae954483e241\transformed\media-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\d7d271375ded6eff316edd27ceb0072d\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-gestures:0.7.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\7a5acbca851dfc52f125d37c79643c72\transformed\jetified-mapbox-android-gestures-0.7.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f0e1dca14b5ed3fe159b41cdf0cbf790\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\21aff1fa3790b705ad8e19b1c47e0d56\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\52b8a03cfc4c20a0c9c78819018423c4\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -63,6 +66,7 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\Ethan Lee\.g
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\b5a1dde354f7afc013622ec6eac7dc84\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\8d4069d8883cd35818f5c173a3837002\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:firebase-components:17.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\82f0742619c93bff749e298ff0daa035\transformed\jetified-firebase-components-17.0.0\AndroidManifest.xml:15:1-23:12
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-accounts:0.7.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\308c6644ad24f8ad739e3b6d6222f0fb\transformed\jetified-mapbox-android-accounts-0.7.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\4a2dc31dca41ceabe72d8efa19d292bf\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\59b41095d2f1061113aab46acc35c68a\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\cdbb0a5ed9226eb4b8198249161f9ff2\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
@@ -72,20 +76,21 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Ethan Lee\.gradl
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\783b035d32ce5be15ab468001bd7362a\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\84046498be48793439a4476136a93af1\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\9ccd4574ebca9c86103f7bd859ba1dfd\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-35:12
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:4.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\1bd756eebd80079e1fce275762292e0b\transformed\jetified-mapbox-android-core-4.0.0\AndroidManifest.xml:2:1-13:12
+INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-36:12
 	package
 		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:3:5-41
 		INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml
 		INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-35:12
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-36:12
 		INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-35:12
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:1-36:12
 		INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:2:11-69
@@ -97,6 +102,10 @@ MERGED from [com.google.firebase:firebase-database:20.0.2] C:\Users\Ethan Lee\.g
 MERGED from [com.google.firebase:firebase-database:20.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\31a6a937917b778354272211aae1edba\transformed\jetified-firebase-database-20.0.2\AndroidManifest.xml:26:5-67
 MERGED from [com.google.android.gms:play-services-maps:18.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\7d6600a9635903e1164fa0008ca3b8b1\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-maps:18.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\7d6600a9635903e1164fa0008ca3b8b1\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:24:5-67
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\608ea0b35f8f2438976bcac59a781929\transformed\jetified-mapbox-android-sdk-9.2.1\AndroidManifest.xml:16:5-67
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\608ea0b35f8f2438976bcac59a781929\transformed\jetified-mapbox-android-sdk-9.2.1\AndroidManifest.xml:16:5-67
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:15:5-67
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:15:5-67
 MERGED from [com.google.android.gms:play-services-measurement-api:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\14292a61aa604dc39dd0e7e08a9296f1\transformed\jetified-play-services-measurement-api-19.0.2\AndroidManifest.xml:22:5-67
 MERGED from [com.google.android.gms:play-services-measurement-api:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\14292a61aa604dc39dd0e7e08a9296f1\transformed\jetified-play-services-measurement-api-19.0.2\AndroidManifest.xml:22:5-67
 MERGED from [com.google.firebase:firebase-installations:17.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\045ee3e52baef22a6f354e1b63ce65b6\transformed\jetified-firebase-installations-17.0.0\AndroidManifest.xml:11:5-67
@@ -117,6 +126,10 @@ MERGED from [com.google.firebase:firebase-database:20.0.2] C:\Users\Ethan Lee\.g
 MERGED from [com.google.firebase:firebase-database:20.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\31a6a937917b778354272211aae1edba\transformed\jetified-firebase-database-20.0.2\AndroidManifest.xml:25:5-79
 MERGED from [com.google.android.gms:play-services-maps:18.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\7d6600a9635903e1164fa0008ca3b8b1\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.gms:play-services-maps:18.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\7d6600a9635903e1164fa0008ca3b8b1\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\608ea0b35f8f2438976bcac59a781929\transformed\jetified-mapbox-android-sdk-9.2.1\AndroidManifest.xml:17:5-79
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\608ea0b35f8f2438976bcac59a781929\transformed\jetified-mapbox-android-sdk-9.2.1\AndroidManifest.xml:17:5-79
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:13:5-79
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:13:5-79
 MERGED from [com.google.android.gms:play-services-measurement-api:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\14292a61aa604dc39dd0e7e08a9296f1\transformed\jetified-play-services-measurement-api-19.0.2\AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.gms:play-services-measurement-api:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\14292a61aa604dc39dd0e7e08a9296f1\transformed\jetified-play-services-measurement-api-19.0.2\AndroidManifest.xml:23:5-79
 MERGED from [com.google.firebase:firebase-installations:17.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\045ee3e52baef22a6f354e1b63ce65b6\transformed\jetified-firebase-installations-17.0.0\AndroidManifest.xml:10:5-79
@@ -127,10 +140,18 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.2] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\94adb6f411981dfa1be82005d665bf36\transformed\jetified-play-services-measurement-impl-19.0.2\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\fbaf4ae79253a136af1fa73188c9cff9\transformed\jetified-play-services-measurement-sdk-api-19.0.2\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\fbaf4ae79253a136af1fa73188c9cff9\transformed\jetified-play-services-measurement-sdk-api-19.0.2\AndroidManifest.xml:24:5-79
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:4.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\1bd756eebd80079e1fce275762292e0b\transformed\jetified-mapbox-android-core-4.0.0\AndroidManifest.xml:11:5-79
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:4.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\1bd756eebd80079e1fce275762292e0b\transformed\jetified-mapbox-android-core-4.0.0\AndroidManifest.xml:11:5-79
 	android:name
 		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:6:22-76
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:7:5-79
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\608ea0b35f8f2438976bcac59a781929\transformed\jetified-mapbox-android-sdk-9.2.1\AndroidManifest.xml:19:5-79
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\608ea0b35f8f2438976bcac59a781929\transformed\jetified-mapbox-android-sdk-9.2.1\AndroidManifest.xml:19:5-79
+	android:name
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:7:22-76
 application
-ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:8:5-33:19
+ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:9:5-34:19
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\e8b294cb4529770c2bdab494b89bedd5\transformed\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\e8b294cb4529770c2bdab494b89bedd5\transformed\material-1.3.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\3721de789aff74f2f52f02659b18895c\transformed\constraintlayout-2.1.1\AndroidManifest.xml:9:5-20
@@ -143,6 +164,8 @@ MERGED from [com.google.android.gms:play-services-maps:18.0.0] C:\Users\Ethan Le
 MERGED from [com.google.android.gms:play-services-maps:18.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\7d6600a9635903e1164fa0008ca3b8b1\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:36:5-42:19
 MERGED from [com.jakewharton.timber:timber:5.0.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\11c96b1550b2d12d8db36e0b862c505b\transformed\jetified-timber-5.0.1\AndroidManifest.xml:7:5-20
 MERGED from [com.jakewharton.timber:timber:5.0.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\11c96b1550b2d12d8db36e0b862c505b\transformed\jetified-timber-5.0.1\AndroidManifest.xml:7:5-20
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:20:5-33:19
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:20:5-33:19
 MERGED from [com.google.firebase:firebase-analytics:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\a3745b3e5224e65eb98eed5e41031e1b\transformed\jetified-firebase-analytics-19.0.2\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-analytics:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\a3745b3e5224e65eb98eed5e41031e1b\transformed\jetified-firebase-analytics-19.0.2\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\cc0c490645cb5c8ef7069804dff9c2ae\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
@@ -184,51 +207,51 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Et
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.5.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\1c82df0e58fbd0ba966b0ae0d34659c1\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:13:9-35
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:11:9-41
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:12:9-41
 	android:roundIcon
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:12:9-54
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:13:9-54
 	android:icon
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:10:9-43
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:11:9-43
 	android:allowBackup
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:10:9-35
 	android:theme
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:14:9-52
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:15:9-52
 activity#com.example.openinvitetest.RegisterFragment
-ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:15:9-17:39
+ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:16:9-18:39
 	android:exported
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:17:13-36
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:18:13-36
 	android:name
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:16:13-45
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:17:13-45
 activity#com.example.openinvitetest.LoginActivity
-ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:18:9-20:39
+ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:19:9-21:39
 	android:exported
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:20:13-36
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:21:13-36
 	android:name
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:19:13-42
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:20:13-42
 activity#com.example.openinvitetest.Choose_Login_And_Reg
-ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:21:9-23:39
+ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:22:9-24:39
 	android:exported
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:23:13-36
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:24:13-36
 	android:name
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:22:13-49
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:23:13-49
 activity#com.example.openinvitetest.MainActivity
-ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:24:9-32:20
+ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:25:9-33:20
 	android:exported
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:26:13-36
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:27:13-36
 	android:name
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:25:13-41
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:26:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:27:13-31:29
+ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:28:13-32:29
 action#android.intent.action.MAIN
-ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:28:17-69
+ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:29:17-69
 	android:name
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:28:25-66
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:29:25-66
 category#android.intent.category.LAUNCHER
-ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:30:17-77
+ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:31:17-77
 	android:name
-		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:30:27-74
+		ADDED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml:31:27-74
 uses-sdk
 INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml
@@ -249,6 +272,10 @@ MERGED from [com.google.android.gms:play-services-maps:18.0.0] C:\Users\Ethan Le
 MERGED from [com.google.android.gms:play-services-maps:18.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\7d6600a9635903e1164fa0008ca3b8b1\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.jakewharton.timber:timber:5.0.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\11c96b1550b2d12d8db36e0b862c505b\transformed\jetified-timber-5.0.1\AndroidManifest.xml:5:5-44
 MERGED from [com.jakewharton.timber:timber:5.0.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\11c96b1550b2d12d8db36e0b862c505b\transformed\jetified-timber-5.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\608ea0b35f8f2438976bcac59a781929\transformed\jetified-mapbox-android-sdk-9.2.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\608ea0b35f8f2438976bcac59a781929\transformed\jetified-mapbox-android-sdk-9.2.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-analytics:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\a3745b3e5224e65eb98eed5e41031e1b\transformed\jetified-firebase-analytics-19.0.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-analytics:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\a3745b3e5224e65eb98eed5e41031e1b\transformed\jetified-firebase-analytics-19.0.2\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\cc0c490645cb5c8ef7069804dff9c2ae\transformed\jetified-firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
@@ -319,6 +346,8 @@ MERGED from [androidx.media:media:1.0.0] C:\Users\Ethan Lee\.gradle\caches\trans
 MERGED from [androidx.media:media:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\bc549059837f713a6813ae954483e241\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\d7d271375ded6eff316edd27ceb0072d\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\d7d271375ded6eff316edd27ceb0072d\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-gestures:0.7.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\7a5acbca851dfc52f125d37c79643c72\transformed\jetified-mapbox-android-gestures-0.7.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-gestures:0.7.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\7a5acbca851dfc52f125d37c79643c72\transformed\jetified-mapbox-android-gestures-0.7.0\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f0e1dca14b5ed3fe159b41cdf0cbf790\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f0e1dca14b5ed3fe159b41cdf0cbf790\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\21aff1fa3790b705ad8e19b1c47e0d56\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
@@ -351,6 +380,8 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\8d4069d8883cd35818f5c173a3837002\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-components:17.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\82f0742619c93bff749e298ff0daa035\transformed\jetified-firebase-components-17.0.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-components:17.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\82f0742619c93bff749e298ff0daa035\transformed\jetified-firebase-components-17.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-accounts:0.7.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\308c6644ad24f8ad739e3b6d6222f0fb\transformed\jetified-mapbox-android-accounts-0.7.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-accounts:0.7.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\308c6644ad24f8ad739e3b6d6222f0fb\transformed\jetified-mapbox-android-accounts-0.7.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\4a2dc31dca41ceabe72d8efa19d292bf\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\4a2dc31dca41ceabe72d8efa19d292bf\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\59b41095d2f1061113aab46acc35c68a\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41
@@ -369,6 +400,8 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\Ethan Lee\.gradle\caches\trans
 MERGED from [androidx.print:print:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\84046498be48793439a4476136a93af1\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\9ccd4574ebca9c86103f7bd859ba1dfd\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\9ccd4574ebca9c86103f7bd859ba1dfd\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:4.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\1bd756eebd80079e1fce275762292e0b\transformed\jetified-mapbox-android-core-4.0.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:4.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\1bd756eebd80079e1fce275762292e0b\transformed\jetified-mapbox-android-core-4.0.0\AndroidManifest.xml:7:5-9:41
 INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml
 INJECTED from E:\Documents\College\2021SeniorYear\Autumn\CSE5236\OpenInviteApp\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
@@ -473,6 +506,8 @@ ADDED from [com.google.firebase:firebase-database:20.0.2] C:\Users\Ethan Lee\.gr
 		ADDED from [com.google.firebase:firebase-database:20.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\31a6a937917b778354272211aae1edba\transformed\jetified-firebase-database-20.0.2\AndroidManifest.xml:33:17-109
 uses-feature#0x00020000
 ADDED from [com.google.android.gms:play-services-maps:18.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\7d6600a9635903e1164fa0008ca3b8b1\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:26:5-28:35
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\608ea0b35f8f2438976bcac59a781929\transformed\jetified-mapbox-android-sdk-9.2.1\AndroidManifest.xml:9:5-11:35
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\608ea0b35f8f2438976bcac59a781929\transformed\jetified-mapbox-android-sdk-9.2.1\AndroidManifest.xml:9:5-11:35
 	android:glEsVersion
 		ADDED from [com.google.android.gms:play-services-maps:18.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\7d6600a9635903e1164fa0008ca3b8b1\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:27:9-41
 	android:required
@@ -489,8 +524,22 @@ ADDED from [com.google.android.gms:play-services-maps:18.0.0] C:\Users\Ethan Lee
 		ADDED from [com.google.android.gms:play-services-maps:18.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\7d6600a9635903e1164fa0008ca3b8b1\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:41:13-37
 	android:name
 		ADDED from [com.google.android.gms:play-services-maps:18.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\7d6600a9635903e1164fa0008ca3b8b1\transformed\jetified-play-services-maps-18.0.0\AndroidManifest.xml:40:13-50
+uses-feature#android.hardware.wifi
+ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\608ea0b35f8f2438976bcac59a781929\transformed\jetified-mapbox-android-sdk-9.2.1\AndroidManifest.xml:12:5-14:36
+	android:required
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\608ea0b35f8f2438976bcac59a781929\transformed\jetified-mapbox-android-sdk-9.2.1\AndroidManifest.xml:14:9-33
+	android:name
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\608ea0b35f8f2438976bcac59a781929\transformed\jetified-mapbox-android-sdk-9.2.1\AndroidManifest.xml:13:9-45
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\608ea0b35f8f2438976bcac59a781929\transformed\jetified-mapbox-android-sdk-9.2.1\AndroidManifest.xml:18:5-76
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:14:5-76
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:14:5-76
+	android:name
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1] C:\Users\Ethan Lee\.gradle\caches\transforms-3\608ea0b35f8f2438976bcac59a781929\transformed\jetified-mapbox-android-sdk-9.2.1\AndroidManifest.xml:18:22-73
 uses-permission#android.permission.WAKE_LOCK
-ADDED from [com.google.android.gms:play-services-measurement-api:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\14292a61aa604dc39dd0e7e08a9296f1\transformed\jetified-play-services-measurement-api-19.0.2\AndroidManifest.xml:24:5-68
+ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:12:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\14292a61aa604dc39dd0e7e08a9296f1\transformed\jetified-play-services-measurement-api-19.0.2\AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement-api:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\14292a61aa604dc39dd0e7e08a9296f1\transformed\jetified-play-services-measurement-api-19.0.2\AndroidManifest.xml:24:5-68
 MERGED from [com.google.android.gms:play-services-measurement:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\1d4b8a4caa0d0798b6a2fb3d69328b21\transformed\jetified-play-services-measurement-19.0.2\AndroidManifest.xml:25:5-68
 MERGED from [com.google.android.gms:play-services-measurement:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\1d4b8a4caa0d0798b6a2fb3d69328b21\transformed\jetified-play-services-measurement-19.0.2\AndroidManifest.xml:25:5-68
 MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\94adb6f411981dfa1be82005d665bf36\transformed\jetified-play-services-measurement-impl-19.0.2\AndroidManifest.xml:25:5-68
@@ -498,7 +547,35 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:19.0.2] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\fbaf4ae79253a136af1fa73188c9cff9\transformed\jetified-play-services-measurement-sdk-api-19.0.2\AndroidManifest.xml:25:5-68
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\fbaf4ae79253a136af1fa73188c9cff9\transformed\jetified-play-services-measurement-sdk-api-19.0.2\AndroidManifest.xml:25:5-68
 	android:name
-		ADDED from [com.google.android.gms:play-services-measurement-api:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\14292a61aa604dc39dd0e7e08a9296f1\transformed\jetified-play-services-measurement-api-19.0.2\AndroidManifest.xml:24:22-65
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:12:22-65
+uses-permission#android.permission.GET_TASKS
+ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:16:5-18:38
+	android:maxSdkVersion
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:18:9-35
+	android:name
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:17:9-52
+provider#com.mapbox.android.telemetry.provider.MapboxTelemetryInitProvider
+ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:21:9-25:39
+	android:authorities
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:23:13-79
+	android:exported
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:24:13-37
+	android:initOrder
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:22:13-93
+service#com.mapbox.android.telemetry.errors.ErrorReporterJobIntentService
+ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:27:9-29:72
+	android:permission
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:28:13-93
+service#com.mapbox.android.telemetry.MapboxTelemetryService
+ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:30:9-32:40
+	android:exported
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0] C:\Users\Ethan Lee\.gradle\caches\transforms-3\f70060ad447c492ddd2c64ea1568fecf\transformed\jetified-mapbox-android-telemetry-7.0.0\AndroidManifest.xml:31:13-79
 meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
 ADDED from [com.google.android.gms:play-services-measurement-api:19.0.2] C:\Users\Ethan Lee\.gradle\caches\transforms-3\14292a61aa604dc39dd0e7e08a9296f1\transformed\jetified-play-services-measurement-api-19.0.2\AndroidManifest.xml:30:13-32:85
 	android:value

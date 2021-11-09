@@ -2,7 +2,6 @@
 buildscript {
     repositories {
         google()
-        mavenCentral()
         maven {
             url 'https://api.mapbox.com/downloads/v2/releases/maven'
             authentication {
@@ -13,9 +12,10 @@ buildscript {
                 // This should always be `mapbox` (not your username).
                 username = 'mapbox'
                 // Use the secret token you stored in gradle.properties as the password
-                password = project.properties['MAPBOX_DOWNLOADS_TOKEN'] ?: ""
+                password = 'sk.eyJ1IjoiZWtsZWUyMDAwIiwiYSI6ImNrdnI5NXVlODFtZzUydW1vZGJ5Njg5bWUifQ.KBiSm4-OF5rSMdDG5wxWwA'
             }
         }
+        mavenCentral()
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.2"

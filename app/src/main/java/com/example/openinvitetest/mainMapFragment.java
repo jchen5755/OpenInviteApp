@@ -30,6 +30,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.maps.MapView;
+import com.mapbox.mapboxsdk.maps.MapboxMap;
+import com.mapbox.mapboxsdk.maps.Style;
+import com.mapbox.mapboxsdk.maps.UiSettings;
 
 import java.util.zip.Inflater;
 
@@ -38,8 +43,8 @@ public class mainMapFragment extends Fragment implements View.OnClickListener {
 
     private Button mCreateInvite, mUserInvite;
     private ImageButton mProfile;
-//    private MapView mMapView;
-//    private MapboxMap mMapboxMap;
+    private MapView mMapView;
+    private MapboxMap mMapboxMap;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthStateListener;
     private FragmentManager fm;
@@ -47,20 +52,20 @@ public class mainMapFragment extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View v = inflater.inflate(R.layout.fragment_main_map, container, false);
 
-//        Mapbox.getInstance(this, BuildConfig.MapboxAccessToken)
-//        mMapView = v.findViewById(R.id.mainMapContainer)
-//        mMapView.onCreate(savedInstanceState);
-//        mMapView.getMapAsync(mapboxMap -> {
-//            mMapboxMap = mapboxMap;
-//            mMapboxMap.setStyle(Style.MAPBOX_STREETS, style -> {
-//                UiSettings uiSettings = mMapboxMap.getUiSettings();
-//                uiSettings.setCompassEnabled(true);
-//                uiSettings.setZoomGesturesEnabled(true);
-////                enableLocationComponent();
-//            });
-//        });
+        mMapView = v.findViewById(R.id.mainMapContainer);
+        mMapView.onCreate(savedInstanceState);
+        mMapView.getMapAsync(mapboxMap -> {
+            mMapboxMap = mapboxMap;
+            mMapboxMap.setStyle(Style.MAPBOX_STREETS, style -> {
+                UiSettings uiSettings = mMapboxMap.getUiSettings();
+                uiSettings.setCompassEnabled(true);
+                uiSettings.setZoomGesturesEnabled(true);
+//                enableLocationComponent();
+            });
+        });
 
         mAuth = FirebaseAuth.getInstance();
         mProfile = v.findViewById(R.id.profileBtn);
