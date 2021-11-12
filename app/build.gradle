@@ -53,10 +53,10 @@ dependencies {
     // Mapbox
 //    implementation 'com.mapbox.maps:android:10.1.0'
     implementation "com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.1"
+    implementation "com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0"
 //    implementation "com.mapbox.mapboxsdk:mapbox-android-core:4.0.0"
 //    implementation "com.mapbox.mapboxsdk:mapbox-java-geojson:2.2.10"
 //    implementation "com.mapbox.mapboxsdk:mapbox-android-services:2.2.10"
-    implementation "com.mapbox.mapboxsdk:mapbox-android-telemetry:7.0.0"
 //    implementation "com.mapbox.mapboxsdk:mapbox-android-ui:2.2.10"
 //    implementation ('com.mapbox.maps:android:10.1.0'){
 //        exclude group: 'group_name', module: 'module_name'
