@@ -47,6 +47,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
+import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.location.LocationComponent;
 import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions;
 import com.mapbox.mapboxsdk.maps.MapView;
@@ -183,6 +185,11 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
         }
     }
 
+    private void setCameraPosition(Location location) {
+        mMapboxMap.animateCamera(CameraUpdateFactory.newLatLngZoom(
+                new LatLng(location.getLatitude(), location.getLongitude()), 16));
+    }
+
     @SuppressLint("MissingPermission")
     @RequiresApi(api = Build.VERSION_CODES.M)
     private LocationEngine initializeLocationEngine() {
@@ -206,6 +213,14 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
     @RequiresApi(api = Build.VERSION_CODES.M)
     private boolean hasLocationPermission() {
         return PermissionsManager.areLocationPermissionsGranted(getContext());
+    }
+
+    @Override
+    public void onSuccess(LocationEngineResult result) {
+        Location location = result.getLastLocation();
+        if (location != null) {
+            setCameraPosition(location);
+        }
     }
 
 //    @RequiresApi(api = Build.VERSION_CODES.M)
@@ -232,11 +247,7 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
 
     }
 
-    @Override
-    public void onSuccess(LocationEngineResult result) {
-        Location location = result.getLastLocation();
-        mMapboxMap.
-    }
+
 
     @Override
     public void onFailure(@NonNull Exception exception) {

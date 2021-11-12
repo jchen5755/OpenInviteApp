@@ -4,9 +4,8 @@ com/example/openinvitetest/Choose_Login_And_Reg.java
  com.example.openinvitetest.Choose_Login_And_Reg
  com.example.openinvitetest.Choose_Login_And_Reg$1
  com.example.openinvitetest.Choose_Login_And_Reg$2
-com/example/openinvitetest/mainMapFragment.java
- com.example.openinvitetest.mainMapFragment
- com.example.openinvitetest.mainMapFragment$1
+com/example/openinvitetest/LoginActivity.java
+ com.example.openinvitetest.LoginActivity
 com/example/openinvitetest/ProfileFragment.java
  com.example.openinvitetest.ProfileFragment
  com.example.openinvitetest.ProfileFragment$1
@@ -22,9 +21,10 @@ com/example/openinvitetest/MainFragment.java
  com.example.openinvitetest.MainFragment
 com/example/openinvitetest/SingleFragmentActivity.java
  com.example.openinvitetest.SingleFragmentActivity
+com/example/openinvitetest/mainMapFragment.java
+ com.example.openinvitetest.mainMapFragment
+ com.example.openinvitetest.mainMapFragment$1
 com/example/openinvitetest/LoginFragment.java
  com.example.openinvitetest.LoginFragment
  com.example.openinvitetest.LoginFragment$1
  com.example.openinvitetest.LoginFragment$2
-com/example/openinvitetest/LoginActivity.java
- com.example.openinvitetest.LoginActivity
