@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.346875" />
+        <entry key="..\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/drawable/ic_invitelogo.xml" value="0.346875" />
+        <entry key="..\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.346875" />
+        <entry key="..\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/drawable/ic_marker.xml" value="0.346875" />
         <entry key="..\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/layout/activity_fragment.xml" value="0.490036231884058" />
         <entry key="..\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/layout/activity_login.xml" value="0.490036231884058" />
         <entry key="..\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/layout/activity_register.xml" value="0.32708333333333334" />

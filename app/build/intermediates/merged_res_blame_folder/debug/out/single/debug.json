@@ -84,6 +84,10 @@
         "source": "E:\\Documents\\College\\2021SeniorYear\\Autumn\\CSE5236\\OpenInviteApp\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_invitelogo.xml"
     },
     {
+        "merged": "E:\\Documents\\College\\2021SeniorYear\\Autumn\\CSE5236\\OpenInviteApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_marker.xml.flat",
+        "source": "E:\\Documents\\College\\2021SeniorYear\\Autumn\\CSE5236\\OpenInviteApp\\app\\src\\main\\res\\drawable\\ic_marker.xml"
+    },
+    {
         "merged": "E:\\Documents\\College\\2021SeniorYear\\Autumn\\CSE5236\\OpenInviteApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "E:\\Documents\\College\\2021SeniorYear\\Autumn\\CSE5236\\OpenInviteApp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
     },
