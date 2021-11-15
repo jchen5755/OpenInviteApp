@@ -26,6 +26,10 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.mapbox.android.core.location.LocationEngine;
 import com.mapbox.android.core.location.LocationEngineCallback;
 import com.mapbox.android.core.location.LocationEngineProvider;
@@ -56,6 +60,8 @@ import com.mapbox.mapboxsdk.plugins.annotation.SymbolManager;
 import com.mapbox.mapboxsdk.plugins.annotation.SymbolOptions;
 import com.mapbox.mapboxsdk.plugins.annotation.Symbol;
 import com.mapbox.mapboxsdk.plugins.annotation.OnSymbolClickListener;
+import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
+
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -127,6 +133,38 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
                 symbolManager.setIconAllowOverlap(true);
                 symbolManager.setTextAllowOverlap(true);
             });
+        });
+
+        mMapView.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(@NonNull MapboxMap mapboxMap) {
+//                DatabaseReference invitesDb = FirebaseDatabase.getInstance().getReference().child("Invites");
+                FirebaseDatabase.getInstance().getReference().child("Invites").get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
+                    @Override
+                    public void onSuccess(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot child : dataSnapshot.getChildren()) {
+                            Double lat = (double) child.child("lat").getValue();
+                            Double lng = (double) child.child("lng").getValue();
+                            SymbolOptions symbolOptions = new SymbolOptions()
+                                    .withLatLng(new LatLng(lat, lng))
+                                    .withIconImage(ID_ICON_MARKER)
+                                    .withIconSize(1.3f)
+                                    .withSymbolSortKey(10.0f)
+                                    .withDraggable(false);
+                            symbol = symbolManager.create(symbolOptions);
+                        }
+                        if (dataSnapshot.hasChildren()) {
+                            symbolManager.addClickListener(new OnSymbolClickListener() {
+                                @Override
+                                public boolean onAnnotationClick(Symbol symbol) {
+                                    Toast.makeText(getContext(), "Marker clicked", Toast.LENGTH_SHORT).show();
+                                    return true;
+                                }
+                            });
+                        }
+                    }
+                });
+            }
         });
 
         mAuth = FirebaseAuth.getInstance();
@@ -268,13 +306,7 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
                     .withDraggable(false);
             symbol = symbolManager.create(symbolOptions);
 
-            symbolManager.addClickListener(new OnSymbolClickListener() {
-                @Override
-                public boolean onAnnotationClick(Symbol symbol) {
-                    Toast.makeText(getContext(), "Marker clicked", Toast.LENGTH_SHORT).show();
-                    return true;
-                }
-            });
+
 
             Timber.e(symbol.toString());
         }
