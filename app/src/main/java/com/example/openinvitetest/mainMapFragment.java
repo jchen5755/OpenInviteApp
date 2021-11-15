@@ -33,6 +33,7 @@ import com.mapbox.android.core.location.LocationEngineRequest;
 import com.mapbox.android.core.location.LocationEngineResult;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
+import com.mapbox.mapboxsdk.plugins.annotation.OnSymbolClickListener;
 import com.mapbox.mapboxsdk.plugins.annotation.Symbol;
 import com.mapbox.mapboxsdk.plugins.annotation.SymbolManager;
 import com.mapbox.mapboxsdk.plugins.annotation.SymbolOptions;
@@ -43,6 +44,18 @@ import com.mapbox.mapboxsdk.plugins.annotation.SymbolOptions;
 //import com.mapbox.mapboxsdk.maps.Style;
 //import com.mapbox.mapboxsdk.maps.UiSettings;
 
+import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.geometry.LatLng;
+import com.mapbox.mapboxsdk.maps.MapView;
+import com.mapbox.mapboxsdk.maps.MapboxMap;
+import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
+import com.mapbox.mapboxsdk.maps.Style;
+import com.mapbox.mapboxsdk.plugins.annotation.OnSymbolDragListener;
+import com.mapbox.mapboxsdk.plugins.annotation.OnSymbolLongClickListener;
+import com.mapbox.mapboxsdk.plugins.annotation.SymbolManager;
+import com.mapbox.mapboxsdk.plugins.annotation.SymbolOptions;
+import com.mapbox.mapboxsdk.plugins.annotation.Symbol;
+import com.mapbox.mapboxsdk.plugins.annotation.OnSymbolClickListener;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -114,6 +127,8 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
             });
         });
 
+
+
         mAuth = FirebaseAuth.getInstance();
         mProfile = v.findViewById(R.id.profileBtn);
         mCreateInvite = v.findViewById(R.id.createInvite);
@@ -157,7 +172,6 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
             mPermissionsManager.requestLocationPermissions(getActivity());
         }
     }
-
 
     @Override
     public void onClick(View view) {
@@ -241,14 +255,23 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
         if (location != null) {
             setCameraPosition(location);
             //This creates a symbol at your location, TESTING PURPOSES
-//            SymbolOptions symbolOptions = new SymbolOptions()
-//                    .withLatLng(new LatLng(location.getLatitude(), location.getLongitude()))
-//                    .withIconImage(ID_ICON_MARKER)
-//                    .withIconSize(1.3f)
-//                    .withSymbolSortKey(10.0f)
-//                    .withDraggable(true);
-//            symbol = symbolManager.create(symbolOptions);
-//            Timber.e(symbol.toString());
+            SymbolOptions symbolOptions = new SymbolOptions()
+                    .withLatLng(new LatLng(location.getLatitude(), location.getLongitude()))
+                    .withIconImage(ID_ICON_MARKER)
+                    .withIconSize(1.3f)
+                    .withSymbolSortKey(10.0f)
+                    .withDraggable(false);
+            symbol = symbolManager.create(symbolOptions);
+
+            symbolManager.addClickListener(new OnSymbolClickListener() {
+                @Override
+                public boolean onAnnotationClick(Symbol symbol) {
+                    Toast.makeText(getContext(), "Marker clicked", Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+            });
+
+            Timber.e(symbol.toString());
         }
     }
 
