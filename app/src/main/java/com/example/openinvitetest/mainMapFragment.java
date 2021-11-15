@@ -33,6 +33,10 @@ import com.mapbox.android.core.location.LocationEngineRequest;
 import com.mapbox.android.core.location.LocationEngineResult;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
+import com.mapbox.mapboxsdk.plugins.annotation.OnSymbolClickListener;
+import com.mapbox.mapboxsdk.plugins.annotation.Symbol;
+import com.mapbox.mapboxsdk.plugins.annotation.SymbolManager;
+import com.mapbox.mapboxsdk.plugins.annotation.SymbolOptions;
 
 //import com.google.android.gms.maps.MapView;
 //import com.mapbox.mapboxsdk.Mapbox;
@@ -40,6 +44,18 @@ import com.mapbox.android.core.permissions.PermissionsManager;
 //import com.mapbox.mapboxsdk.maps.Style;
 //import com.mapbox.mapboxsdk.maps.UiSettings;
 
+import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.geometry.LatLng;
+import com.mapbox.mapboxsdk.maps.MapView;
+import com.mapbox.mapboxsdk.maps.MapboxMap;
+import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
+import com.mapbox.mapboxsdk.maps.Style;
+import com.mapbox.mapboxsdk.plugins.annotation.OnSymbolDragListener;
+import com.mapbox.mapboxsdk.plugins.annotation.OnSymbolLongClickListener;
+import com.mapbox.mapboxsdk.plugins.annotation.SymbolManager;
+import com.mapbox.mapboxsdk.plugins.annotation.SymbolOptions;
+import com.mapbox.mapboxsdk.plugins.annotation.Symbol;
+import com.mapbox.mapboxsdk.plugins.annotation.OnSymbolClickListener;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -57,6 +73,11 @@ import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
 import com.mapbox.mapboxsdk.maps.UiSettings;
+import com.mapbox.mapboxsdk.style.expressions.Expression;
+import com.mapbox.mapboxsdk.style.layers.Property;
+import com.mapbox.mapboxsdk.style.sources.GeoJsonOptions;
+import com.mapbox.mapboxsdk.utils.BitmapUtils;
+import com.mapbox.mapboxsdk.utils.ColorUtils;
 
 import java.util.List;
 import java.util.Objects;
@@ -77,6 +98,11 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
     private PermissionsManager mPermissionsManager;
     private LocationEngine mLocationEngine;
 
+    private SymbolManager symbolManager;
+    private Symbol symbol;
+
+    private final String ID_ICON_MARKER = "marker";
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -92,6 +118,14 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
                 uiSettings.setCompassEnabled(true);
                 uiSettings.setZoomGesturesEnabled(true);
                 enableLocationComponent();
+                addMarkerImageToStyle(style);
+
+                GeoJsonOptions geoJsonOptions = new GeoJsonOptions().withTolerance(0.4f);
+                symbolManager = new SymbolManager(mMapView, mMapboxMap, style, null, geoJsonOptions);
+
+                //Symbol options stuff
+                symbolManager.setIconAllowOverlap(true);
+                symbolManager.setTextAllowOverlap(true);
             });
         });
 
@@ -138,7 +172,6 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
             mPermissionsManager.requestLocationPermissions(getActivity());
         }
     }
-
 
     @Override
     public void onClick(View view) {
@@ -226,7 +259,31 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
         Location location = result.getLastLocation();
         if (location != null) {
             setCameraPosition(location);
+            //This creates a symbol at your location, TESTING PURPOSES
+            SymbolOptions symbolOptions = new SymbolOptions()
+                    .withLatLng(new LatLng(location.getLatitude(), location.getLongitude()))
+                    .withIconImage(ID_ICON_MARKER)
+                    .withIconSize(1.3f)
+                    .withSymbolSortKey(10.0f)
+                    .withDraggable(false);
+            symbol = symbolManager.create(symbolOptions);
+
+            symbolManager.addClickListener(new OnSymbolClickListener() {
+                @Override
+                public boolean onAnnotationClick(Symbol symbol) {
+                    Toast.makeText(getContext(), "Marker clicked", Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+            });
+
+            Timber.e(symbol.toString());
         }
+    }
+
+    private void addMarkerImageToStyle(Style style) {
+        style.addImage(ID_ICON_MARKER,
+                BitmapUtils.getBitmapFromDrawable(getResources().getDrawable(R.drawable.ic_marker)),
+                true);
     }
 
 //    @RequiresApi(api = Build.VERSION_CODES.M)
