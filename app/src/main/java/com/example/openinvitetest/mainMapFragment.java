@@ -226,6 +226,11 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
                     .replace(R.id.fragment_container, new CreateInviteFragment())
                     .addToBackStack("profile_fragment")
                     .commit();
+        } else if (viewId == R.id.userInvite) {
+            fm.beginTransaction()
+                    .replace(R.id.fragment_container, new InviteFragment())
+                    .addToBackStack("profile_fragment")
+                    .commit();
         }
     }
 

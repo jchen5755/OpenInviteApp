@@ -15,20 +15,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
 
 import java.util.HashMap;
@@ -36,10 +35,11 @@ import java.util.Map;
 
 import timber.log.Timber;
 
-public class CreateInviteFragment extends Fragment implements View.OnClickListener {
-    private Button mCreateInvite;
+public class InviteFragment extends Fragment implements View.OnClickListener {
+    private Button mDeleteInvite;
     private EditText mInviteTitle, mInviteDescription;
     private FirebaseAuth mAuth;
+    private FirebaseUser user;
     private FirebaseAuth.AuthStateListener firebaseAuthStateListener;
     public double latitude;
     public double longitude;
@@ -49,14 +49,30 @@ public class CreateInviteFragment extends Fragment implements View.OnClickListen
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_create_invite, container, false);
+        View v = inflater.inflate(R.layout.fragment_invite, container, false);
         mAuth = FirebaseAuth.getInstance();
-        mCreateInvite = v.findViewById(R.id.createInviteButton);
+        mDeleteInvite = v.findViewById(R.id.deleteInviteButton);
         mInviteTitle = v.findViewById(R.id.inviteTitle);
         mInviteDescription = v.findViewById(R.id.inviteDesc);
-        if (mCreateInvite != null) {
-            mCreateInvite.setOnClickListener(this);
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        if (mDeleteInvite != null) {
+            mDeleteInvite.setOnClickListener(this);
         }
+        String userId = mAuth.getCurrentUser().getUid();
+        DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Invites").child((userId));
+        currentUserDb.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mInviteTitle.setText(snapshot.child("title").getValue().toString());
+                mInviteDescription.setText(snapshot.child("description").getValue().toString());
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         firebaseAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -113,12 +129,12 @@ public class CreateInviteFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View view) {
         final int viewId = view.getId();
-        String userId = mAuth.getCurrentUser().getUid();
-        DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Invites").child((userId));
-        if (viewId == mCreateInvite.getId()) {
+        if (viewId == mDeleteInvite.getId()) {
             final String title = mInviteTitle.getText().toString();
             final String description = mInviteDescription.getText().toString();
             doRequestLocation();
+            String userId = mAuth.getCurrentUser().getUid();
+            DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Invites").child((userId));
             Map userInfo = new HashMap<>();
             userInfo.put("lat", latitude);
             userInfo.put("lng", longitude);

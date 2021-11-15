@@ -22,18 +22,19 @@
         android:layout_height="194dp"
         android:text=""
         android:gravity="top"
-        app:layout_constraintBottom_toTopOf="@+id/createInviteButton"
+        app:layout_constraintBottom_toTopOf="@+id/deleteInviteButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inviteTitle" />
 
     <Button
-        android:id="@+id/createInviteButton"
+        android:id="@+id/deleteInviteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="192dp"
-        android:text="Create"
+        android:text="Delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
