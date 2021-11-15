@@ -30,6 +30,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import com.mapbox.android.core.location.LocationEngine;
 import com.mapbox.android.core.location.LocationEngineCallback;
 import com.mapbox.android.core.location.LocationEngineProvider;
@@ -143,6 +145,8 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
                     @Override
                     public void onSuccess(DataSnapshot dataSnapshot) {
                         for (DataSnapshot child : dataSnapshot.getChildren()) {
+                            JsonElement userId;
+                            userId = new JsonParser().parse(child.getKey());
                             Double lat = (double) child.child("lat").getValue();
                             Double lng = (double) child.child("lng").getValue();
                             SymbolOptions symbolOptions = new SymbolOptions()
@@ -150,6 +154,7 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
                                     .withIconImage(ID_ICON_MARKER)
                                     .withIconSize(1.3f)
                                     .withSymbolSortKey(10.0f)
+                                    .withData(userId)
                                     .withDraggable(false);
                             symbol = symbolManager.create(symbolOptions);
                         }
@@ -157,7 +162,7 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
                             symbolManager.addClickListener(new OnSymbolClickListener() {
                                 @Override
                                 public boolean onAnnotationClick(Symbol symbol) {
-                                    Toast.makeText(getContext(), "Marker clicked", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getContext(), symbol.getData().toString(), Toast.LENGTH_SHORT).show();
                                     return true;
                                 }
                             });
@@ -311,18 +316,6 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
         Location location = result.getLastLocation();
         if (location != null) {
             setCameraPosition(location);
-            //This creates a symbol at your location, TESTING PURPOSES
-            SymbolOptions symbolOptions = new SymbolOptions()
-                    .withLatLng(new LatLng(location.getLatitude(), location.getLongitude()))
-                    .withIconImage(ID_ICON_MARKER)
-                    .withIconSize(1.3f)
-                    .withSymbolSortKey(10.0f)
-                    .withDraggable(false);
-            symbol = symbolManager.create(symbolOptions);
-
-
-
-            Timber.e(symbol.toString());
         }
     }
 
