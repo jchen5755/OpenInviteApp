@@ -2129,6 +2129,7 @@ int id coordinator 0x7f08008a
 int id cos 0x7f08008b
 int id counterclockwise 0x7f08008c
 int id createInvite 0x7f08008d
+int id createInviteButton 0x7f0801fd
 int id currentState 0x7f08008e
 int id custom 0x7f08008f
 int id customPanel 0x7f080090
@@ -2223,6 +2224,8 @@ int id info 0x7f0800e8
 int id infowindow_description 0x7f0800e9
 int id infowindow_title 0x7f0800ea
 int id invisible 0x7f0800eb
+int id inviteDesc 0x7f0801fe
+int id inviteTitle 0x7f0801ff
 int id inward 0x7f0800ec
 int id italic 0x7f0800ed
 int id item_touch_helper_previous_elevation 0x7f0800ee
@@ -2578,6 +2581,7 @@ int layout design_navigation_menu_item 0x7f0b002d
 int layout design_text_input_end_icon 0x7f0b002e
 int layout design_text_input_start_icon 0x7f0b002f
 int layout fragment_choose_login_and_reg 0x7f0b0030
+int layout fragment_create_invite 0x7f0b0083
 int layout fragment_login 0x7f0b0031
 int layout fragment_main_map 0x7f0b0032
 int layout fragment_profile 0x7f0b0033

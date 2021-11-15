@@ -1,18 +1,22 @@
 com/example/openinvitetest/BuildConfig.java
  com.example.openinvitetest.BuildConfig
+com/example/openinvitetest/MainActivity.java
+ com.example.openinvitetest.MainActivity
 com/example/openinvitetest/Choose_Login_And_Reg.java
  com.example.openinvitetest.Choose_Login_And_Reg
  com.example.openinvitetest.Choose_Login_And_Reg$1
  com.example.openinvitetest.Choose_Login_And_Reg$2
 com/example/openinvitetest/LoginActivity.java
  com.example.openinvitetest.LoginActivity
+com/example/openinvitetest/LoginFragment.java
+ com.example.openinvitetest.LoginFragment
+ com.example.openinvitetest.LoginFragment$1
+ com.example.openinvitetest.LoginFragment$2
 com/example/openinvitetest/ProfileFragment.java
  com.example.openinvitetest.ProfileFragment
  com.example.openinvitetest.ProfileFragment$1
 com/example/openinvitetest/ProfileActivity.java
  com.example.openinvitetest.ProfileActivity
-com/example/openinvitetest/MainActivity.java
- com.example.openinvitetest.MainActivity
 com/example/openinvitetest/RegisterFragment.java
  com.example.openinvitetest.RegisterFragment
  com.example.openinvitetest.RegisterFragment$1
@@ -24,7 +28,7 @@ com/example/openinvitetest/SingleFragmentActivity.java
 com/example/openinvitetest/mainMapFragment.java
  com.example.openinvitetest.mainMapFragment
  com.example.openinvitetest.mainMapFragment$1
-com/example/openinvitetest/LoginFragment.java
- com.example.openinvitetest.LoginFragment
- com.example.openinvitetest.LoginFragment$1
- com.example.openinvitetest.LoginFragment$2
+ com.example.openinvitetest.mainMapFragment$2
+com/example/openinvitetest/CreateInviteFragment.java
+ com.example.openinvitetest.CreateInviteFragment
+ com.example.openinvitetest.CreateInviteFragment$1

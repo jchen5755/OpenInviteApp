@@ -2130,6 +2130,7 @@ id coordinator
 id cos
 id counterclockwise
 id createInvite
+id createInviteButton
 id currentState
 id custom
 id customPanel
@@ -2224,6 +2225,8 @@ id info
 id infowindow_description
 id infowindow_title
 id invisible
+id inviteDesc
+id inviteTitle
 id inward
 id italic
 id item_touch_helper_previous_elevation
@@ -2579,6 +2582,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_choose_login_and_reg
+layout fragment_create_invite
 layout fragment_login
 layout fragment_main_map
 layout fragment_profile
