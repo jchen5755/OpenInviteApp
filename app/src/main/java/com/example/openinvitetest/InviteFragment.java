@@ -20,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -45,11 +46,13 @@ public class InviteFragment extends Fragment implements View.OnClickListener {
     public double longitude;
     public LocationManager locationManager;
     private PermissionsManager mPermissionsManager;
+    private FragmentManager fm;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_invite, container, false);
+        fm = getParentFragmentManager();
         mAuth = FirebaseAuth.getInstance();
         mDeleteInvite = v.findViewById(R.id.deleteInviteButton);
         mInviteTitle = v.findViewById(R.id.inviteTitle);
@@ -93,6 +96,11 @@ public class InviteFragment extends Fragment implements View.OnClickListener {
             String userId = mAuth.getCurrentUser().getUid();
             DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Invites").child((userId));
             currentUserDb.removeValue();
+            fm.beginTransaction()
+                    .replace(R.id.fragment_container, new mainMapFragment())
+                    .addToBackStack("main_fragment")
+                    .commit();
+            return;
         }
     }
 }

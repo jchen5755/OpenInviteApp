@@ -9,10 +9,11 @@
         android:id="@+id/createInvite"
         android:layout_width="96dp"
         android:layout_height="87dp"
-        android:layout_marginStart="32dp"
         android:text="Create Invite"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/profileBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.939" />
 
@@ -23,6 +24,7 @@
         android:layout_marginStart="28dp"
         android:text="Profile"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/createInvite"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.939" />
@@ -31,7 +33,6 @@
         android:id="@+id/userInvite"
         android:layout_width="96dp"
         android:layout_height="87dp"
-        android:layout_marginStart="24dp"
         android:text="My Invite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,6 +45,8 @@
         android:id="@+id/mainMapContainer"
         android:layout_width="match_parent"
         android:layout_height="549dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/createInvite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

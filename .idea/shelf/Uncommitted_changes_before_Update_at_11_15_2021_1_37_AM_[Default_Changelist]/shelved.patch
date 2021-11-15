@@ -1,0 +1,68 @@
+Index: app/src/main/res/layout/fragment_main_map.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\">\r\n\r\n    <Button\r\n        android:id=\"@+id/createInvite\"\r\n        android:layout_width=\"96dp\"\r\n        android:layout_height=\"87dp\"\r\n        android:layout_marginStart=\"32dp\"\r\n        android:text=\"Create Invite\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintStart_toEndOf=\"@+id/profileBtn\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.939\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/profileBtn\"\r\n        android:layout_width=\"96dp\"\r\n        android:layout_height=\"87dp\"\r\n        android:layout_marginStart=\"28dp\"\r\n        android:text=\"Profile\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.939\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/userInvite\"\r\n        android:layout_width=\"96dp\"\r\n        android:layout_height=\"87dp\"\r\n        android:layout_marginStart=\"24dp\"\r\n        android:text=\"My Invite\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.23\"\r\n        app:layout_constraintStart_toEndOf=\"@+id/createInvite\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.939\" />\r\n\r\n    <com.mapbox.mapboxsdk.maps.MapView\r\n        android:id=\"@+id/mainMapContainer\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"549dp\"\r\n        app:layout_constraintBottom_toTopOf=\"@+id/createInvite\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.0\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.0\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/myLocationBtn\"\r\n        android:layout_width=\"96dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"find me\"\r\n        app:layout_constraintBottom_toTopOf=\"@+id/createInvite\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toBottomOf=\"@+id/mainMapContainer\"\r\n        app:layout_constraintVertical_bias=\"1.0\" />\r\n</androidx.constraintlayout.widget.ConstraintLayout>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_main_map.xml b/app/src/main/res/layout/fragment_main_map.xml
+--- a/app/src/main/res/layout/fragment_main_map.xml	(revision e7dd62a65a4694b4786f182b0f104081f04b6238)
++++ b/app/src/main/res/layout/fragment_main_map.xml	(date 1636958226783)
+@@ -9,10 +9,11 @@
+         android:id="@+id/createInvite"
+         android:layout_width="96dp"
+         android:layout_height="87dp"
+-        android:layout_marginStart="32dp"
+         android:text="Create Invite"
+         app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintStart_toEndOf="@+id/profileBtn"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.498"
++        app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintVertical_bias="0.939" />
+ 
+@@ -23,6 +24,7 @@
+         android:layout_marginStart="28dp"
+         android:text="Profile"
+         app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toStartOf="@+id/createInvite"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         app:layout_constraintVertical_bias="0.939" />
+@@ -31,7 +33,6 @@
+         android:id="@+id/userInvite"
+         android:layout_width="96dp"
+         android:layout_height="87dp"
+-        android:layout_marginStart="24dp"
+         android:text="My Invite"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+@@ -44,6 +45,8 @@
+         android:id="@+id/mainMapContainer"
+         android:layout_width="match_parent"
+         android:layout_height="549dp"
++        android:paddingTop="10dp"
++        android:paddingBottom="10dp"
+         app:layout_constraintBottom_toTopOf="@+id/createInvite"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.0"
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/layout/activity_fragment.xml\" value=\"0.490036231884058\" />\r\n        <entry key=\"..\\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/layout/activity_login.xml\" value=\"0.490036231884058\" />\r\n        <entry key=\"..\\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/layout/activity_register.xml\" value=\"0.32708333333333334\" />\r\n        <entry key=\"..\\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/layout/fragment_choose_login_and_reg.xml\" value=\"0.490036231884058\" />\r\n        <entry key=\"..\\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/layout/fragment_login.xml\" value=\"0.5541666666666667\" />\r\n        <entry key=\"..\\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/layout/fragment_main_map.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/layout/fragment_profile.xml\" value=\"0.3307291666666667\" />\r\n        <entry key=\"..\\:/Documents/College/2021SeniorYear/Autumn/CSE5236/OpenInviteApp/app/src/main/res/layout/fragment_register.xml\" value=\"0.3307291666666667\" />\r\n        <entry key=\"..\\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/drawable/ic_invitelogo.xml\" value=\"0.4203125\" />\r\n        <entry key=\"..\\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/drawable/ic_launcher_background.xml\" value=\"0.4203125\" />\r\n        <entry key=\"..\\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/activity_choose_login_and_reg.xml\" value=\"0.4\" />\r\n        <entry key=\"..\\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/activity_fragment.xml\" value=\"0.19832826747720364\" />\r\n        <entry key=\"..\\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/activity_login.xml\" value=\"0.4041666666666667\" />\r\n        <entry key=\"..\\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/activity_main.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/activity_register.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/fragment_choose_login_and_reg.xml\" value=\"0.2563405797101449\" />\r\n        <entry key=\"..\\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/fragment_create_invite.xml\" value=\"0.2635416666666667\" />\r\n        <entry key=\"..\\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/fragment_invite.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/fragment_login.xml\" value=\"0.2563405797101449\" />\r\n        <entry key=\"..\\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/fragment_main_map.xml\" value=\"0.40353260869565216\" />\r\n        <entry key=\"..\\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/fragment_profile.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/fragment_register.xml\" value=\"0.21354166666666666\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\" />\r\n  <component name=\"VisualizationToolProject\">\r\n    <option name=\"state\">\r\n      <ProjectState>\r\n        <option name=\"scale\" value=\"0.264\" />\r\n      </ProjectState>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision e7dd62a65a4694b4786f182b0f104081f04b6238)
++++ b/.idea/misc.xml	(date 1636958082182)
+@@ -22,7 +22,7 @@
+         <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/fragment_create_invite.xml" value="0.2635416666666667" />
+         <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/fragment_invite.xml" value="0.264" />
+         <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/fragment_login.xml" value="0.2563405797101449" />
+-        <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/fragment_main_map.xml" value="0.40353260869565216" />
++        <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/fragment_main_map.xml" value="0.4" />
+         <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+         <entry key="..\:/Users/Jerry/StudioProjects/OpenInviteAppTest/app/src/main/res/layout/fragment_register.xml" value="0.21354166666666666" />
+       </map>

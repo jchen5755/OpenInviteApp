@@ -21,6 +21,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -45,11 +46,13 @@ public class CreateInviteFragment extends Fragment implements View.OnClickListen
     public double longitude;
     public LocationManager locationManager;
     private PermissionsManager mPermissionsManager;
+    private FragmentManager fm;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_create_invite, container, false);
+        fm = getParentFragmentManager();
         mAuth = FirebaseAuth.getInstance();
         mCreateInvite = v.findViewById(R.id.createInviteButton);
         mInviteTitle = v.findViewById(R.id.inviteTitle);
@@ -125,6 +128,11 @@ public class CreateInviteFragment extends Fragment implements View.OnClickListen
             userInfo.put("title", title);
             userInfo.put("description", description);
             currentUserDb.updateChildren(userInfo);
+            fm.beginTransaction()
+                    .replace(R.id.fragment_container, new mainMapFragment())
+                    .addToBackStack("main_fragment")
+                    .commit();
+            return;
         }
     }
 }
