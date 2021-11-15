@@ -28,6 +28,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mapbox.android.core.permissions.PermissionsManager;
@@ -127,12 +128,20 @@ public class CreateInviteFragment extends Fragment implements View.OnClickListen
             userInfo.put("lng", longitude);
             userInfo.put("title", title);
             userInfo.put("description", description);
-            currentUserDb.updateChildren(userInfo);
-            fm.beginTransaction()
-                    .replace(R.id.fragment_container, new mainMapFragment())
-                    .addToBackStack("main_fragment")
-                    .commit();
-            return;
+            currentUserDb.updateChildren(userInfo, new DatabaseReference.CompletionListener() {
+                @Override
+                public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
+                    try {
+                        wait(50);
+                    } catch (Exception e) {
+
+                    };
+                    fm.beginTransaction()
+                            .replace(R.id.fragment_container, new mainMapFragment())
+                            .addToBackStack("main_fragment")
+                            .commit();
+                }
+            });
         }
     }
 }

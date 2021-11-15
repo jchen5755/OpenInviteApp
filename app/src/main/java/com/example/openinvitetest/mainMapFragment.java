@@ -94,7 +94,7 @@ import java.util.zip.Inflater;
 import timber.log.Timber;
 
 public class mainMapFragment extends Fragment implements LocationEngineCallback<LocationEngineResult>,
-        PermissionsListener, View.OnClickListener {
+        PermissionsListener, View.OnClickListener, OnMapReadyCallback {
     private final String TAG = getClass().getSimpleName();
 
     private Button mCreateInvite, mUserInvite, mProfile, mMyLocation;
@@ -137,41 +137,6 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
             });
         });
 
-        mMapView.getMapAsync(new OnMapReadyCallback() {
-            @Override
-            public void onMapReady(@NonNull MapboxMap mapboxMap) {
-//                DatabaseReference invitesDb = FirebaseDatabase.getInstance().getReference().child("Invites");
-                FirebaseDatabase.getInstance().getReference().child("Invites").get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
-                    @Override
-                    public void onSuccess(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot child : dataSnapshot.getChildren()) {
-                            JsonElement userId;
-                            userId = new JsonParser().parse(child.getKey());
-                            Double lat = (double) child.child("lat").getValue();
-                            Double lng = (double) child.child("lng").getValue();
-                            SymbolOptions symbolOptions = new SymbolOptions()
-                                    .withLatLng(new LatLng(lat, lng))
-                                    .withIconImage(ID_ICON_MARKER)
-                                    .withIconSize(1.3f)
-                                    .withSymbolSortKey(10.0f)
-                                    .withData(userId)
-                                    .withDraggable(false);
-                            symbol = symbolManager.create(symbolOptions);
-                        }
-                        if (dataSnapshot.hasChildren()) {
-                            symbolManager.addClickListener(new OnSymbolClickListener() {
-                                @Override
-                                public boolean onAnnotationClick(Symbol symbol) {
-                                    Toast.makeText(getContext(), symbol.getData().toString(), Toast.LENGTH_SHORT).show();
-                                    return true;
-                                }
-                            });
-                        }
-                    }
-                });
-            }
-        });
-
         mAuth = FirebaseAuth.getInstance();
         mProfile = v.findViewById(R.id.profileBtn);
         mCreateInvite = v.findViewById(R.id.createInvite);
@@ -195,8 +160,45 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
             }
         };
+
+        mMapView.getMapAsync(this);
+
         Log.d(TAG, "On Create View portion of Fragment Lifecycle");
         return v;
+    }
+
+
+    @Override
+    public void onMapReady(@NonNull MapboxMap mapboxMap) {
+        mapboxMap = mMapboxMap;
+        FirebaseDatabase.getInstance().getReference().child("Invites").get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
+            @Override
+            public void onSuccess(DataSnapshot dataSnapshot) {
+                for (DataSnapshot child : dataSnapshot.getChildren()) {
+                    JsonElement userId;
+                    userId = new JsonParser().parse(child.getKey());
+                    Double lat = (double) child.child("lat").getValue();
+                    Double lng = (double) child.child("lng").getValue();
+                    SymbolOptions symbolOptions = new SymbolOptions()
+                            .withLatLng(new LatLng(lat, lng))
+                            .withIconImage(ID_ICON_MARKER)
+                            .withIconSize(1.3f)
+                            .withSymbolSortKey(10.0f)
+                            .withData(userId)
+                            .withDraggable(false);
+                    symbol = symbolManager.create(symbolOptions);
+                }
+                if (dataSnapshot.hasChildren()) {
+                    symbolManager.addClickListener(new OnSymbolClickListener() {
+                        @Override
+                        public boolean onAnnotationClick(Symbol symbol) {
+                            Toast.makeText(getContext(), symbol.getData().toString(), Toast.LENGTH_SHORT).show();
+                            return true;
+                        }
+                    });
+                }
+            }
+        });
     }
 
     @SuppressWarnings({"MissingPermission"})
@@ -355,4 +357,5 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
     public void onFailure(@NonNull Exception exception) {
 
     }
+
 }
