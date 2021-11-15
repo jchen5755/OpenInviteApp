@@ -36,7 +36,7 @@ import java.util.Map;
 
 import timber.log.Timber;
 
-public class InviteFragment extends Fragment implements View.OnClickListener {
+public class MyInviteFragment extends Fragment implements View.OnClickListener {
     private Button mDeleteInvite;
     private EditText mInviteTitle, mInviteDescription;
     private FirebaseAuth mAuth;

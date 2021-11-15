@@ -1,12 +1,7 @@
 package com.example.openinvitetest;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.location.Location;
-import android.location.LocationRequest;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
@@ -15,9 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,10 +17,11 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentResultListener;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
@@ -50,46 +43,23 @@ import com.mapbox.mapboxsdk.plugins.annotation.SymbolOptions;
 //import com.mapbox.mapboxsdk.maps.Style;
 //import com.mapbox.mapboxsdk.maps.UiSettings;
 
-import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
-import com.mapbox.mapboxsdk.plugins.annotation.OnSymbolDragListener;
-import com.mapbox.mapboxsdk.plugins.annotation.OnSymbolLongClickListener;
-import com.mapbox.mapboxsdk.plugins.annotation.SymbolManager;
-import com.mapbox.mapboxsdk.plugins.annotation.SymbolOptions;
-import com.mapbox.mapboxsdk.plugins.annotation.Symbol;
-import com.mapbox.mapboxsdk.plugins.annotation.OnSymbolClickListener;
-import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.mapbox.mapboxsdk.Mapbox;
-import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
-import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.location.LocationComponent;
 import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions;
-import com.mapbox.mapboxsdk.maps.MapView;
-import com.mapbox.mapboxsdk.maps.MapboxMap;
-import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
-import com.mapbox.mapboxsdk.maps.Style;
 import com.mapbox.mapboxsdk.maps.UiSettings;
-import com.mapbox.mapboxsdk.style.expressions.Expression;
-import com.mapbox.mapboxsdk.style.layers.Property;
 import com.mapbox.mapboxsdk.style.sources.GeoJsonOptions;
 import com.mapbox.mapboxsdk.utils.BitmapUtils;
-import com.mapbox.mapboxsdk.utils.ColorUtils;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.zip.Inflater;
 
 import timber.log.Timber;
 
@@ -109,6 +79,9 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
     private SymbolManager symbolManager;
     private Symbol symbol;
 
+    private userIdViewModel vm;
+    private String userID;
+
     private final String ID_ICON_MARKER = "marker";
 
     @Nullable
@@ -116,6 +89,8 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_main_map, container, false);
+
+        vm = new ViewModelProvider(requireActivity()).get(userIdViewModel.class);
 
         mMapView = v.findViewById(R.id.mainMapContainer);
         mMapView.onCreate(savedInstanceState);
@@ -161,6 +136,7 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
             }
         };
 
+        userID = mAuth.getCurrentUser().getUid();
         mMapView.getMapAsync(this);
 
         Log.d(TAG, "On Create View portion of Fragment Lifecycle");
@@ -170,7 +146,6 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
 
     @Override
     public void onMapReady(@NonNull MapboxMap mapboxMap) {
-        mapboxMap = mMapboxMap;
         FirebaseDatabase.getInstance().getReference().child("Invites").get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
             @Override
             public void onSuccess(DataSnapshot dataSnapshot) {
@@ -192,7 +167,22 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
                     symbolManager.addClickListener(new OnSymbolClickListener() {
                         @Override
                         public boolean onAnnotationClick(Symbol symbol) {
-                            Toast.makeText(getContext(), symbol.getData().toString(), Toast.LENGTH_SHORT).show();
+                            // Gets user id from symbol and formats it correctly
+                            String symbolUserID = symbol.getData().toString();
+                            symbolUserID = symbolUserID.substring(1, symbolUserID.length()-1);
+                            if (symbolUserID.equals(userID)) {
+                                fm.beginTransaction()
+                                        .replace(R.id.fragment_container, new MyInviteFragment())
+                                        .addToBackStack("my_invite_fragment")
+                                        .commit();
+                            } else {
+                                // Saves user id in the view model for the invite fragment to use
+                                vm.setUserID(symbolUserID);
+                                fm.beginTransaction()
+                                        .replace(R.id.fragment_container, new OtherInviteFragment())
+                                        .addToBackStack("other_invite_fragment")
+                                        .commit();
+                            }
                             return true;
                         }
                     });
@@ -241,7 +231,7 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
                         Toast.makeText(getContext(), "You don't have an invite currently", Toast.LENGTH_LONG).show();
                     } else {
                         fm.beginTransaction()
-                                .replace(R.id.fragment_container, new InviteFragment())
+                                .replace(R.id.fragment_container, new MyInviteFragment())
                                 .addToBackStack("profile_fragment")
                                 .commit();
                     }
