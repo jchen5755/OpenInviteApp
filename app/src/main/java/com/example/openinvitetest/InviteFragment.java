@@ -65,12 +65,10 @@ public class InviteFragment extends Fragment implements View.OnClickListener {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 mInviteTitle.setText(snapshot.child("title").getValue().toString());
                 mInviteDescription.setText(snapshot.child("description").getValue().toString());
-
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
         firebaseAuthStateListener = new FirebaseAuth.AuthStateListener() {
@@ -88,59 +86,13 @@ public class InviteFragment extends Fragment implements View.OnClickListener {
         return v;
     }
 
-    private void requestLocation() {
-        Timber.d("requestLocation()");
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (!PermissionsManager.areLocationPermissionsGranted(getContext())) {
-                int PERMISSION_REQUEST_LOCATION = 1;
-//                mPermissionsManager = new PermissionsManager(this);
-//                mPermissionsManager.requestLocationPermissions(getActivity());
-            } else {
-                doRequestLocation();
-            }
-        } else {
-            doRequestLocation();
-        }
-    }
-
-    private void doRequestLocation() {
-        locationManager = (LocationManager) this.getContext().getSystemService(Context.LOCATION_SERVICE);
-        @SuppressLint("MissingPermission") Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        if (location != null) {
-            Log.e("TAG", "GPS is on");
-            latitude = location.getLatitude();
-            longitude = location.getLongitude();
-        } else {
-            //This is what you need:
-            if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                // TODO: Consider calling
-                //    ActivityCompat#requestPermissions
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for ActivityCompat#requestPermissions for more details.
-                return;
-            }
-            locationManager.requestLocationUpdates(Context.LOCATION_SERVICE, 1000, 0, (LocationListener) this);
-        }
-    }
-
     @Override
     public void onClick(View view) {
         final int viewId = view.getId();
         if (viewId == mDeleteInvite.getId()) {
-            final String title = mInviteTitle.getText().toString();
-            final String description = mInviteDescription.getText().toString();
-            doRequestLocation();
             String userId = mAuth.getCurrentUser().getUid();
             DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Invites").child((userId));
-            Map userInfo = new HashMap<>();
-            userInfo.put("lat", latitude);
-            userInfo.put("lng", longitude);
-            userInfo.put("title", title);
-            userInfo.put("description", description);
-            currentUserDb.updateChildren(userInfo);
+            currentUserDb.removeValue();
         }
     }
 }
