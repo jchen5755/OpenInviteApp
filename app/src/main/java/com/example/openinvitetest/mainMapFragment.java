@@ -227,10 +227,19 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
                     .addToBackStack("profile_fragment")
                     .commit();
         } else if (viewId == R.id.userInvite) {
-            fm.beginTransaction()
-                    .replace(R.id.fragment_container, new InviteFragment())
-                    .addToBackStack("profile_fragment")
-                    .commit();
+            FirebaseDatabase.getInstance().getReference().child("Invites").get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
+                @Override
+                public void onSuccess(DataSnapshot dataSnapshot) {
+                    if (!dataSnapshot.hasChild(mAuth.getCurrentUser().getUid())) {
+                        Toast.makeText(getContext(), "You don't have an invite currently", Toast.LENGTH_LONG).show();
+                    } else {
+                        fm.beginTransaction()
+                                .replace(R.id.fragment_container, new InviteFragment())
+                                .addToBackStack("profile_fragment")
+                                .commit();
+                    }
+                }
+            });
         }
     }
 
