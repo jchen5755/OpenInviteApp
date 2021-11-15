@@ -63,12 +63,14 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
 import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.location.LocationComponent;
 import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
+import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
 import com.mapbox.mapboxsdk.maps.UiSettings;
 import com.mapbox.mapboxsdk.style.expressions.Expression;
@@ -127,8 +129,6 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
             });
         });
 
-
-
         mAuth = FirebaseAuth.getInstance();
         mProfile = v.findViewById(R.id.profileBtn);
         mCreateInvite = v.findViewById(R.id.createInvite);
@@ -183,6 +183,11 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
                     .commit();
         } else if (viewId == R.id.myLocationBtn) {
             requestLocation();
+        } else if (viewId == R.id.createInvite) {
+            fm.beginTransaction()
+                    .replace(R.id.fragment_container, new CreateInviteFragment())
+                    .addToBackStack("profile_fragment")
+                    .commit();
         }
     }
 
