@@ -25,8 +25,6 @@ public class MainActivity extends SingleFragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Mapbox.getInstance(this, BuildConfig.MapboxAccessToken);
-        Timber.tag(TAG).e("On Create");
-        Log.d(TAG, "On Create portion of activity lifecycle");
     }
 
     @Override
