@@ -3,7 +3,7 @@ package com.example.openinvitetest;
 import androidx.lifecycle.ViewModel;
 
 public class userIdViewModel extends ViewModel {
-    private String userID;
+    public String userID;
 
     public void setUserID(String id) {
         userID = id;
