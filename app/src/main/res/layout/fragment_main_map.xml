@@ -7,46 +7,53 @@
 
     <Button
         android:id="@+id/createInvite"
-        android:layout_width="96dp"
-        android:layout_height="87dp"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:background="@drawable/button_style"
         android:text="Create Invite"
+        android:textSize="11dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.939" />
-
-    <Button
-        android:id="@+id/profileBtn"
-        android:layout_width="96dp"
-        android:layout_height="87dp"
-        android:layout_marginStart="28dp"
-        android:text="Profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/createInvite"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.939" />
+        app:layout_constraintVertical_bias="0.974" />
 
     <Button
         android:id="@+id/userInvite"
-        android:layout_width="96dp"
-        android:layout_height="87dp"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:background="@drawable/button_style"
         android:text="My Invite"
+        android:textSize="11dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintHorizontal_bias="0.225"
         app:layout_constraintStart_toEndOf="@+id/createInvite"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.939" />
+        app:layout_constraintVertical_bias="0.974" />
+
+    <Button
+        android:id="@+id/profileBtn"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="28dp"
+        android:background="@drawable/button_style"
+        android:text="Profile"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/createInvite"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.974" />
 
     <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/mainMapContainer"
         android:layout_width="match_parent"
         android:layout_height="549dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@+id/createInvite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -58,10 +65,15 @@
         android:id="@+id/myLocationBtn"
         android:layout_width="96dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_style"
         android:text="find me"
+        android:textSize="12dp"
         app:layout_constraintBottom_toTopOf="@+id/createInvite"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainMapContainer"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,7 @@ package com.example.openinvitetest;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,10 +17,16 @@ import androidx.fragment.app.FragmentManager;
 
 public class MainFragment extends Fragment implements View.OnClickListener{
     private Button mLogin, mRegister;
+    private LayoutInflater mInflater;
+    private ViewGroup mContainer;
+    private Bundle mSavedInstanceState;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_choose_login_and_reg, container, false);
+        mInflater = inflater;
+        mContainer = container;
+        mSavedInstanceState = savedInstanceState;
+        View v = initializeUserInterface(mInflater, mContainer, mSavedInstanceState);
         final Button loginButton = v.findViewById(R.id.login);
         if (loginButton != null) {
             loginButton.setOnClickListener(this);
@@ -29,6 +36,36 @@ public class MainFragment extends Fragment implements View.OnClickListener{
             registerButton.setOnClickListener(this);
         }
         return v;
+    }
+
+    public View initializeUserInterface(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view;
+
+        // Get the screen orientation.
+        int orientation = getActivity().getResources().getConfiguration().orientation;
+
+        // Inflate the appropriate layout based on the screen orientation.
+        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            view = inflater.inflate(R.layout.fragment_choose_login_and_reg, container, false);
+        }
+        else { // orientation == Configuration.ORIENTATION_LANDSCAPE
+            view = inflater.inflate(R.layout.fragment_choose_login_and_reg_horizontal, container, false);
+        }
+
+        return view;
+    }
+
+    /**
+     * This is called when the user rotates the device.
+     * @param newConfig Configuration
+     */
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        // Create the new layout.
+        View view = initializeUserInterface(mInflater, mContainer, mSavedInstanceState);
+
+        // Call the default method to cover our bases.
+        super.onConfigurationChanged(newConfig);
     }
 
     @Override

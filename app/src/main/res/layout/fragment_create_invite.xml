@@ -154,7 +154,7 @@
                         style="@android:style/Widget.Material.Button.Borderless.Colored"
                         android:layout_marginTop="25dp"
                         android:layout_marginBottom="2dp"
-                        android:background="#6a4fff"
+                        android:background="@drawable/button_style"
                         android:padding="12dp"
                         android:text="Create Invite"
                         android:textColor="@color/white"/>

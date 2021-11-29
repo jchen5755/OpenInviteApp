@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,6 +30,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private final String TAG = getClass().getSimpleName();
     private EditText mFirstName, mLastName, mEmail;
     private Button mUpdateProfile, mDeleteAcct;
+    private ImageButton mMapBtn;
     private FirebaseAuth mAuth;
     private FirebaseUser user;
     private FragmentManager fm;
@@ -43,6 +45,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         mEmail = v.findViewById(R.id.profile_email);
         mUpdateProfile = v.findViewById(R.id.updateBtn);
         mDeleteAcct = v.findViewById(R.id.deleteAccountBtn);
+        mMapBtn = v.findViewById(R.id.mapBtn);
         mAuth = FirebaseAuth.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
         mEmail.setHint(user.getEmail());
@@ -66,6 +69,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         }
         if (mDeleteAcct != null) {
             mDeleteAcct.setOnClickListener(this);
+        }
+        if (mMapBtn != null) {
+            mMapBtn.setOnClickListener(this);
         }
 //        mFirstName.setText((CharSequence) currentUserDb.child("lastName"));
 //        mFirstName.setText(user.getEmail());
@@ -102,6 +108,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             fm.beginTransaction()
                     .replace(R.id.fragment_container, new MainFragment())
                     .commit();
+        }else if (viewId == mMapBtn.getId()) {
+            fm.popBackStackImmediate();
         }
     }
 }
