@@ -48,6 +48,7 @@ public class CreateInviteFragment extends Fragment implements View.OnClickListen
     public LocationManager locationManager;
     private PermissionsManager mPermissionsManager;
     private FragmentManager fm;
+    private int nullLocation = 999;
 
     @Nullable
     @Override
@@ -58,6 +59,8 @@ public class CreateInviteFragment extends Fragment implements View.OnClickListen
         mCreateInvite = v.findViewById(R.id.createInviteButton);
         mInviteTitle = v.findViewById(R.id.inviteTitle);
         mInviteDescription = v.findViewById(R.id.inviteDesc);
+        latitude = 9999;
+        longitude = 9999;
         if (mCreateInvite != null) {
             mCreateInvite.setOnClickListener(this);
         }
@@ -74,21 +77,6 @@ public class CreateInviteFragment extends Fragment implements View.OnClickListen
             }
         };
         return v;
-    }
-
-    private void requestLocation() {
-        Timber.d("requestLocation()");
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (!PermissionsManager.areLocationPermissionsGranted(getContext())) {
-                int PERMISSION_REQUEST_LOCATION = 1;
-//                mPermissionsManager = new PermissionsManager(this);
-//                mPermissionsManager.requestLocationPermissions(getActivity());
-            } else {
-                doRequestLocation();
-            }
-        } else {
-            doRequestLocation();
-        }
     }
 
     private void doRequestLocation() {
@@ -110,7 +98,8 @@ public class CreateInviteFragment extends Fragment implements View.OnClickListen
                 // for ActivityCompat#requestPermissions for more details.
                 return;
             }
-            locationManager.requestLocationUpdates(Context.LOCATION_SERVICE, 1000, 0, (LocationListener) this);
+//            locationManager.requestLocationUpdates(Context.LOCATION_SERVICE, 1000, 0, (LocationListener) this);
+            Toast.makeText(getContext(), "We couldn't create your invite due to a location services error!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -124,24 +113,27 @@ public class CreateInviteFragment extends Fragment implements View.OnClickListen
             final String description = mInviteDescription.getText().toString();
             doRequestLocation();
             Map userInfo = new HashMap<>();
-            userInfo.put("lat", latitude);
-            userInfo.put("lng", longitude);
-            userInfo.put("title", title);
-            userInfo.put("description", description);
-            currentUserDb.updateChildren(userInfo, new DatabaseReference.CompletionListener() {
-                @Override
-                public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-                    try {
-                        wait(50);
-                    } catch (Exception e) {
+            if (latitude < 500 && longitude < 500) {
+                userInfo.put("lat", latitude);
+                userInfo.put("lng", longitude);
+                userInfo.put("title", title);
+                userInfo.put("description", description);
+                currentUserDb.updateChildren(userInfo, new DatabaseReference.CompletionListener() {
+                    @Override
+                    public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
+                        try {
+                            wait(50);
+                        } catch (Exception e) {
 
-                    };
-                    fm.beginTransaction()
-                            .replace(R.id.fragment_container, new mainMapFragment())
-                            .addToBackStack("main_fragment")
-                            .commit();
-                }
-            });
+                        }
+                        ;
+                        fm.beginTransaction()
+                                .replace(R.id.fragment_container, new mainMapFragment())
+                                .addToBackStack("main_fragment")
+                                .commit();
+                    }
+                });
+            }
         }
     }
 }

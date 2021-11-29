@@ -283,6 +283,7 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
             Log.e("TAG", "GPS is on");
             latitude = location.getLatitude();
             longitude = location.getLongitude();
+            setCameraPosition(location);
         } else {
             //This is what you need:
             if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -295,9 +296,8 @@ public class mainMapFragment extends Fragment implements LocationEngineCallback<
                 // for ActivityCompat#requestPermissions for more details.
                 return;
             }
-            locationManager.requestLocationUpdates(Context.LOCATION_SERVICE, 1000, 0, (LocationListener) this);
+            Toast.makeText(getContext(), "Location Services aren't currently working!", Toast.LENGTH_SHORT).show();
         }
-        setCameraPosition(location);
     }
 
     private void setCameraPosition(Location location) {
