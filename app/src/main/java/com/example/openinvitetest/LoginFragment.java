@@ -30,7 +30,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     private Button mLogin;
     private EditText mEmail, mPassword;
-    private TextView mForgotPassword;
+    private TextView mForgotPassword, mNewUser;
     private boolean loginButtonClicked;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthStateListener;
@@ -46,6 +46,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         mEmail = v.findViewById(R.id.email);
         mPassword = v.findViewById(R.id.password);
         mForgotPassword = v.findViewById(R.id.password_reset);
+        mNewUser = v.findViewById(R.id.new_user);
         fm = getParentFragmentManager();
 
         if (mLogin != null) {
@@ -53,6 +54,8 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         }
         if (mForgotPassword != null) {
             mForgotPassword.setOnClickListener(this);
+        }if (mNewUser != null) {
+            mNewUser.setOnClickListener(this);
         }
         firebaseAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -95,6 +98,10 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                     .addToBackStack("main_fragment")
                     .commit();
             return;
+        } else if (viewId == mNewUser.getId()) {
+            fm.beginTransaction()
+                    .replace(R.id.fragment_container, new RegisterFragment())
+                    .commit();
         }
     }
 

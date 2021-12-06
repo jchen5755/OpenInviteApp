@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -41,6 +42,7 @@ public class MyInviteFragment extends Fragment implements View.OnClickListener {
     private EditText mInviteTitle, mInviteDescription;
     private FirebaseAuth mAuth;
     private FirebaseUser user;
+    private ImageButton mMapBtn;
     private FirebaseAuth.AuthStateListener firebaseAuthStateListener;
     public double latitude;
     public double longitude;
@@ -57,9 +59,13 @@ public class MyInviteFragment extends Fragment implements View.OnClickListener {
         mDeleteInvite = v.findViewById(R.id.deleteInviteButton);
         mInviteTitle = v.findViewById(R.id.inviteTitle);
         mInviteDescription = v.findViewById(R.id.inviteDesc);
+        mMapBtn = v.findViewById(R.id.mapBtn);
         user = FirebaseAuth.getInstance().getCurrentUser();
         if (mDeleteInvite != null) {
             mDeleteInvite.setOnClickListener(this);
+        }
+        if (mMapBtn != null) {
+            mMapBtn.setOnClickListener(this);
         }
         String userId = mAuth.getCurrentUser().getUid();
         DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Invites").child((userId));
@@ -101,6 +107,8 @@ public class MyInviteFragment extends Fragment implements View.OnClickListener {
                     .addToBackStack("main_fragment")
                     .commit();
             return;
+        } else if (viewId == mMapBtn.getId()) {
+            fm.popBackStackImmediate();
         }
     }
 }

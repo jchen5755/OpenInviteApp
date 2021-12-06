@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -40,6 +41,7 @@ import timber.log.Timber;
 
 public class CreateInviteFragment extends Fragment implements View.OnClickListener {
     private Button mCreateInvite;
+    private ImageButton mMapBtn;
     private EditText mInviteTitle, mInviteDescription;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthStateListener;
@@ -59,10 +61,14 @@ public class CreateInviteFragment extends Fragment implements View.OnClickListen
         mCreateInvite = v.findViewById(R.id.createInviteButton);
         mInviteTitle = v.findViewById(R.id.inviteTitle);
         mInviteDescription = v.findViewById(R.id.inviteDesc);
+        mMapBtn = v.findViewById(R.id.mapBtn);
         latitude = 9999;
         longitude = 9999;
         if (mCreateInvite != null) {
             mCreateInvite.setOnClickListener(this);
+        }
+        if (mMapBtn != null) {
+            mMapBtn.setOnClickListener(this);
         }
         firebaseAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -134,6 +140,8 @@ public class CreateInviteFragment extends Fragment implements View.OnClickListen
                     }
                 });
             }
+        } else if (viewId == mMapBtn.getId()) {
+            fm.popBackStackImmediate();
         }
     }
 }

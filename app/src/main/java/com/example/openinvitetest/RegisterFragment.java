@@ -157,7 +157,6 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         } else if (viewId == mExisting.getId()) {
             fm.beginTransaction()
                     .replace(R.id.fragment_container, new LoginFragment())
-                    .addToBackStack("login_fragment")
                     .commit();
         }
     }

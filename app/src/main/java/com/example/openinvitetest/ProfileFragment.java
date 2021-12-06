@@ -83,6 +83,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         final int viewId = v.getId();
         String userId = mAuth.getCurrentUser().getUid();
         DatabaseReference currentUserDb = FirebaseDatabase.getInstance().getReference().child("Users").child((userId));
+        DatabaseReference currentInvite = FirebaseDatabase.getInstance().getReference().child("Invites").child((userId));
         Map userInfo = new HashMap<>();
         if (viewId == mUpdateProfile.getId()) {
             Log.d(TAG, "TEST: "+mEmail.getText().toString());
@@ -103,6 +104,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 //                    .commit();
         } else if (viewId == mDeleteAcct.getId()) {
             currentUserDb.removeValue();
+            currentInvite.removeValue();
             user.delete();
             Toast.makeText(getContext(), "Account Destroyed!", Toast.LENGTH_SHORT);
             fm.beginTransaction()

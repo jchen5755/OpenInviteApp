@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -40,12 +41,13 @@ import java.util.Map;
 
 import timber.log.Timber;
 
-public class OtherInviteFragment extends Fragment {
+public class OtherInviteFragment extends Fragment implements View.OnClickListener{
     private final String TAG = getClass().getSimpleName();
     private EditText mInviteTitle, mInviteDescription;
     private TextView mInviteUser;
     private FirebaseAuth mAuth;
     private FirebaseUser user;
+    private ImageButton mMapBtn;
     private FirebaseAuth.AuthStateListener firebaseAuthStateListener;
     public double latitude;
     public double longitude;
@@ -64,7 +66,7 @@ public class OtherInviteFragment extends Fragment {
 
         vm = new ViewModelProvider(requireActivity()).get(userIdViewModel.class);
         resultUserID = vm.returnID();
-
+        mMapBtn = v.findViewById(R.id.mapBtn);
         fm = getParentFragmentManager();
         mAuth = FirebaseAuth.getInstance();
         mInviteTitle = v.findViewById(R.id.otherInviteTitle);
@@ -72,7 +74,9 @@ public class OtherInviteFragment extends Fragment {
         mInviteUser = v.findViewById(R.id.otherInviteUser);
         user = FirebaseAuth.getInstance().getCurrentUser();
         String userId = mAuth.getCurrentUser().getUid();
-
+        if (mMapBtn != null) {
+            mMapBtn.setOnClickListener(this);
+        }
         FirebaseDatabase.getInstance().getReference().child("Users").child((resultUserID)).get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
             @Override
             public void onSuccess(DataSnapshot dataSnapshot) {
@@ -104,4 +108,11 @@ public class OtherInviteFragment extends Fragment {
         return v;
     }
 
+    @Override
+    public void onClick(View view) {
+        final int viewId = view.getId();
+        if (viewId == mMapBtn.getId()) {
+            fm.popBackStackImmediate();
+        }
+    }
 }

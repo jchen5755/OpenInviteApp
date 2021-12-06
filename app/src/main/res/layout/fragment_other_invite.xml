@@ -19,8 +19,16 @@
                 android:background="@color/white"
                 android:orientation="vertical"
                 android:paddingLeft="25dp"
-                android:paddingTop="55dp"
+                android:paddingTop="25dp"
                 android:paddingRight="25dp">
+
+                <ImageButton
+                    android:id="@+id/mapBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/profile"
+                    android:background="@null"
+                    android:src="@drawable/ic_home" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
